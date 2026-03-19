@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint of the Day - Back Cover</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .cover-container {
+            width: 6in;
+            height: 9in;
+            background: linear-gradient(180deg, #e8f4f8 0%, #f5fafb 100%);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            text-align: center;
+        }
+
+        .top-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 1rem;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a5568;
+            text-align: justify;
+            margin: 1rem 0;
+        }
+
+        .features {
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #2c5282;
+        }
+
+        .features-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item {
+            margin: 0.3rem 0;
+        }
+
+        .bottom-section {
+            border-top: 2px solid #cbd5e0;
+            padding-top: 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #4a5568;
+        }
+
+        .copyright {
+            margin: 0.5rem 0;
+            line-height: 1.4;
+        }
+
+        .isbn-section {
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #2c5282;
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: #f0f4f8;
+            border-left: 3px solid #2c5282;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media print {
+            .cover-container {
+                box-shadow: none;
+                width: 100%;
+                height: 100%;
+                padding: 0.5in;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cover-container">
+        <div class="content">
+            <div class="top-section">
+                <div class="description">
+                    A daily devotional companion for children that celebrates Catholic saints and their virtues through Scripture, prayer, and inspiring stories. Each day brings a new saint, a Bible verse in the Douay-Rheims translation, and a simple action to grow in faith and love.
+                </div>
+
+                <div class="features">
+                    <div class="features-title">What You'll Find Inside:</div>
+                    <div class="feature-item">✦ Daily prayers for children</div>
+                    <div class="feature-item">✦ Scripture from the Douay-Rheims Bible</div>
+                    <div class="feature-item">✦ Saint stories highlighting virtue</div>
+                    <div class="feature-item">✦ Simple daily actions</div>
+                    <div class="feature-item">✦ Year-round spiritual growth</div>
+                </div>
+
+                <div class="quote">
+                    "Let no one despise thy youth: but be thou an example of the faithful in word, in conversation, in charity, in faith, in chastity."
+                    <br — 1 Timothy 4:12>
+                </div>
+            </div>
+
+            <div class="bottom-section">
+                <div class="copyright">
+                    © 2026 SHIJI KJ<br>
+                    All rights reserved.
+                </div>
+                <div class="copyright">
+                    Scripture quotations are from the<br>
+                    Douay-Rheims Bible (Public Domain).
+                </div>
+                <div class="isbn-section">
+                    ISBN: ________________
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* Saint of the Day - Print & PDF Stylesheet */
+
+@page {
+    size: 6in 9in;
+    margin: 0.75in;
+    orphans: 2;
+    widows: 2;
+}
+
+@page :first {
+    margin-top: 1.5in;
+}
+
+body {
+    background: white;
+    color: black;
+}
+
+.container {
+    max-width: 100%;
+    padding: 0;
+}
+
+/* Header - Hide on Print */
+header,
+.controls,
+.pagination,
+.actions,
+footer {
+    display: none !important;
+}
+
+/* Daily Content Formatting */
+.daily-page {
+    page-break-after: always;
+    background: white;
+    padding: 0.5in;
+    margin: 0;
+    border-radius: 0;
+    page-break-inside: avoid;
+}
+
+.daily-page:last-child {
+    page-break-after: auto;
+}
+
+.daily-date {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.5in;
+    page-break-after: avoid;
+    font-weight: 700;
+}
+
+.daily-page h2 {
+    font-size: 1.2rem;
+    margin-top: 0.3in;
+    margin-bottom: 0.2in;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+}
+
+.daily-page p {
+    text-align: justify;
+    margin-bottom: 0.2in;
+    page-break-inside: avoid;
+}
+
+.scripture-ref {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.1in;
+    page-break-after: avoid;
+}
+
+.scripture-text {
+    background: white;
+    padding: 0.2in 0.3in;
+    border-left: 0.1in solid #000;
+    margin: 0.2in 0;
+    font-style: italic;
+    page-break-inside: avoid;
+}
+
+.meaning {
+    background: white;
+    padding: 0.2in 0.3in;
+    margin: 0.2in 0;
+    page-break-inside: avoid;
+}
+
+.story {
+    text-align: justify;
+}
+
+/* Prevent orphaned headings */
+h2 {
+    page-break-after: avoid;
+}
+
+p {
+    orphans: 3;
+    widows: 3;
+}
+
+/* Print-specific adjustments */
+@media print {
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .daily-page {
+        border: none;
+    }
+}
+
+/* Kindle/eBook Format - Responsive */
+@media screen and (max-width: 600px) {
+    .daily-page {
+        padding: 1rem;
+    }
+
+    .daily-date {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .daily-page h2 {
+        font-size: 1rem;
+    }
+
+    body {
+        font-size: 16px;
+    }
+}

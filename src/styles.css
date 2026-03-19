@@ -1,0 +1,410 @@
+/* Saint of the Day - Main Stylesheet */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c5282;
+    --secondary-color: #f0f4f8;
+    --text-color: #1a202c;
+    --light-text: #4a5568;
+    --border-color: #cbd5e0;
+    --accent-color: #c05a3c;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+header .author {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.controls label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.controls input[type="date"],
+.controls button {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    background: white;
+}
+
+.controls button {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #1e3a5f;
+}
+
+.date-display {
+    font-size: 1rem;
+    color: var(--light-text);
+    min-width: 150px;
+}
+
+/* Navigation */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.nav-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--border-color);
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.nav-btn:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+#page-counter {
+    min-width: 100px;
+    text-align: center;
+    color: var(--light-text);
+}
+
+/* Daily Content */
+.daily-page {
+    background: linear-gradient(to bottom, #fafbfc, #ffffff);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    line-height: 1.8;
+}
+
+.daily-date {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.daily-page h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.daily-page p {
+    text-align: justify;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.scripture-ref {
+    font-weight: 600;
+    color: var(--accent-color);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.scripture-text {
+    background-color: var(--secondary-color);
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    margin: 1rem 0;
+    font-style: italic;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.meaning {
+    background-color: #f9f9f9;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    color: var(--light-text);
+    text-align: justify;
+}
+
+.story {
+    text-align: justify;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.export-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.export-btn:hover {
+    background-color: #a0452f;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+footer p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+/* Loading & Error States */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--light-text);
+}
+
+.error {
+    background-color: #fed7d7;
+    color: #742a2a;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .daily-page {
+        padding: 2rem 1rem;
+    }
+
+    .daily-date {
+        font-size: 1.5rem;
+    }
+
+    .daily-page h2 {
+        font-size: 1.2rem;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls input[type="date"],
+    .controls button {
+        width: 100%;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-btn {
+        width: 100%;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .export-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .daily-page {
+        padding: 1rem;
+    }
+
+    .scripture-text {
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(44, 82, 130, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Modal responsive */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+        padding: 1rem;
+    }
+
+    .modal-content h2 {
+        font-size: 1.3rem;
+    }
+}
