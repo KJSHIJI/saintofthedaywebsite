@@ -1,13 +1,14 @@
 /* Saint of the Day - Daily Content Database */
 
 const DAILY_CONTENT = {
-    "01-01": {
+"01-01": {
     title: "January 1  Mary, Mother of God",
     story: "Mary lived in the small town of Nazareth and was chosen by God to be the Mother of Jesus. Tradition tells us that Mary was born in Jerusalem to holy parents named Joachim and Anne, who prayed for many years for a child. When the angel Gabriel appeared to Mary, she humbly said yes to God’s plan, even though she did not fully understand what would happen. Because Mary is the Mother of Jesus, who is truly God, the Church honors her as the Mother of God. On January 1, her feast day, we remember Mary’s loving faith and trust in God. After Jesus was born, Mary cared for Him gently and listened quietly to all that happened. She kept God’s words in her heart and trusted Him each day. Mary teaches us that holiness begins with saying yes to God and trusting Him with our lives.",
     bibleVerse: "Bible verse: Luke 2:19\nBut Mary kept all these words, pondering them in her heart.",
     prayer: "Dear Mother Mary, you trusted God with your whole heart and gave the world Jesus. Please pray for us as we begin this new year. Help us trust God, love Jesus, and follow Him every day.",
     action: "Say a Hail Mary today and ask Mother Mary to help you obey God and be kind to others this year."
-},
+}
+,
      "01-02": {
         date: "January 2",
         saint: "Saint Basil the Great and Saint Gregory of Nazianzus",
