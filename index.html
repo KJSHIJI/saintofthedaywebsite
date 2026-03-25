@@ -15,6 +15,14 @@
 </head>
 <body>
     <div class="container">
+        <div class="theme-toggle" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <button id="owner-login-btn" class="owner-login-btn" style="display:none; margin-right: 1rem;">🔑 Owner</button>
+                <button id="owner-logout-btn" class="owner-logout-btn" style="display:none; margin-right: 1rem;">👤 Logout</button>
+            </div>
+            <button id="theme-toggle-btn" class="theme-btn">🌙 Dark Mode</button>
+        </div>
+
         <header>
             <h1>Saint of the Day</h1>
             <p class="author">By SHIJI KJ</p>
@@ -38,12 +46,131 @@
             <!-- Daily content loads here -->
         </main>
 
-        <div class="actions">
-            <button id="print-btn" class="export-btn">🖨️ Print / PDF</button>
-            <button id="export-word-btn" class="export-btn">📄 Export to Word</button>
-            <button id="export-monthly-btn" class="export-btn">📅 Export Month</button>
-            <button id="export-book-btn" class="export-btn">📖 Export Full Book</button>
+        <div class="actions" id="owner-actions" style="display: none;">
+            <button id="print-btn" class="export-btn">📄 Print (PDF)</button>
+            <button id="export-word-btn" class="export-btn">📝 Export Day as Word</button>
+            <button id="export-monthly-btn" class="export-btn">📚 Export Month as Word</button>
+            <button id="export-book-btn" class="export-btn">📖 Export Full Book (6×9 Paperback)</button>
             <button id="edit-mode-btn" class="export-btn" style="background-color: #27ae60;">✏️ Add/Edit Entry</button>
+            
+            <hr style="my: 1rem; border: none; border-top: 1px solid var(--border-color);">
+            
+            <div style="background: var(--secondary-color); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                <h3 style="margin-top: 0;">📦 KDP Download (Print-Ready)</h3>
+                <p style="color: var(--light-text); font-size: 0.9rem; margin-bottom: 1rem;">Generate interior PDF and cover wrap for Amazon KDP</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label for="kdp-trim-select" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Trim Size:</label>
+                        <select id="kdp-trim-select" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px; background: white; color: var(--text-color);">
+                            <option value="6x9">6×9 (Standard)</option>
+                            <option value="5x8">5×8 (Compact)</option>
+                            <option value="5.5x8.5">5.5×8.5</option>
+                            <option value="8.5x11">8.5×11 (Large)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="kdp-format-select" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Format:</label>
+                        <select id="kdp-format-select" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 4px; background: white; color: var(--text-color);">
+                            <option value="paperback">Paperback</option>
+                            <option value="hardcover">Hardcover</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 0.5rem;">
+                    <button id="kdp-interior-btn" class="export-btn" style="flex: 1; background-color: #8b6f47;">📚 KDP Interior (PDF)</button>
+                    <button id="kdp-cover-btn" class="export-btn" style="flex: 1; background-color: #6b4c3a;">🎨 KDP Cover Wrap (PDF)</button>
+                </div>
+            </div>
+            
+            <button id="payment-mgmt-btn" class="export-btn" style="background-color: #666;">💳 Manage Payment Info</button>
+            <button id="export-data-btn" class="export-btn" style="background-color: #9966cc;">📥 Export All Data to GitHub</button>
+        </div>
+
+        <div class="actions" id="user-actions" style="display: block;">
+            <!-- User can read free content here -->
+        </div>
+
+        <div id="paid-notice" style="display: none; margin-top: 2rem; padding: 1.5rem; background: var(--accent-color); color: white; border-radius: 8px; text-align: center;">
+            <p style="font-size: 1.1rem; margin: 0;">🔒 <strong>This content is for paid subscribers</strong></p>
+            <p id="payment-info-display" style="margin-top: 0.5rem; font-size: 0.9rem;"></p>
+            <button id="unlock-content-btn" class="export-btn" style="background-color: white; color: #c05a3c; margin-top: 1rem; font-weight: 600;">💳 See Pricing & Unlock</button>
+        </div>
+
+        <!-- Pricing Modal -->
+        <div id="pricing-modal" class="modal" style="display: none;">
+            <div class="modal-content" style="max-width: 600px;">
+                <span class="close" id="pricing-close">&times;</span>
+                <h2>🎁 Unlock Content</h2>
+                <p style="text-align: center; color: var(--light-text); margin-bottom: 1.5rem;">Choose your subscription level:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                    <!-- 1 Day Option -->
+                    <div style="border: 2px solid var(--primary-color); border-radius: 8px; padding: 1rem; text-align: center; cursor: pointer;" id="plan-day" class="pricing-plan">
+                        <p style="font-size: 0.9rem; color: var(--light-text); margin: 0;">📅 1 Day Access</p>
+                        <p style="font-size: 1.8rem; font-weight: bold; color: var(--accent-color); margin: 0.5rem 0;">₹5</p>
+                        <p style="font-size: 0.85rem; color: var(--light-text); margin: 0;">Today's content</p>
+                        <button class="export-btn" onclick="app.purchaseAccess('day')" style="margin-top: 0.5rem; width: 100%;">Buy Now</button>
+                    </div>
+
+                    <!-- 1 Month Option -->
+                    <div style="border: 3px solid var(--primary-color); border-radius: 8px; padding: 1rem; text-align: center; cursor: pointer; background: rgba(44, 82, 130, 0.1);" id="plan-month" class="pricing-plan">
+                        <p style="font-size: 0.85rem; background: var(--primary-color); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; display: inline-block; margin: 0;">⭐ POPULAR</p>
+                        <p style="font-size: 0.9rem; color: var(--light-text); margin: 0.5rem 0;">📚 1 Month Access</p>
+                        <p style="font-size: 1.8rem; font-weight: bold; color: var(--accent-color); margin: 0.5rem 0;">₹200</p>
+                        <p style="font-size: 0.85rem; color: var(--light-text); margin: 0;">30 days of content</p>
+                        <button class="export-btn" onclick="app.purchaseAccess('month')" style="margin-top: 0.5rem; width: 100%; background-color: var(--primary-color);">Buy Now</button>
+                    </div>
+
+                    <!-- 1 Year Option -->
+                    <div style="border: 2px solid var(--primary-color); border-radius: 8px; padding: 1rem; text-align: center; cursor: pointer;" id="plan-year" class="pricing-plan">
+                        <p style="font-size: 0.9rem; color: var(--light-text); margin: 0;">📖 1 Year Access</p>
+                        <p style="font-size: 1.8rem; font-weight: bold; color: var(--accent-color); margin: 0.5rem 0;">₹999</p>
+                        <p style="font-size: 0.85rem; color: var(--light-text); margin: 0;">365 days of content</p>
+                        <button class="export-btn" onclick="app.purchaseAccess('year')" style="margin-top: 0.5rem; width: 100%;">Buy Now</button>
+                    </div>
+                </div>
+
+                <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border-color);">
+                
+                <p style="text-align: center; font-size: 0.9rem; color: var(--light-text);">
+                    After payment, click the button again to unlock your access instantly!
+                </p>
+                <button id="pricing-cancel-btn" class="export-btn" style="width: 100%; background-color: #999; margin-top: 1rem;">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Owner Login Modal -->
+        <div id="login-modal" class="modal" style="display: none;">
+            <div class="modal-content" style="max-width: 400px;">
+                <span class="close" id="login-close">&times;</span>
+                <h2>Owner Login</h2>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" id="owner-password" placeholder="Enter owner password">
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <button id="login-btn" class="export-btn" style="background-color: #2c5282;">Login</button>
+                    <button id="login-cancel-btn" class="export-btn" style="background-color: #999;">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Info Modal (Owner Only) -->
+        <div id="payment-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="payment-close">&times;</span>
+                <h2>Payment Information</h2>
+                <div class="form-group">
+                    <label>GPay Number or QR Code Link:</label>
+                    <textarea id="payment-info" placeholder="Paste GPay number, UPI ID, or image URL. Leave empty to remove payment info." rows="4"></textarea>
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <button id="save-payment-btn" class="export-btn" style="background-color: #2c5282;">Save</button>
+                    <button id="payment-cancel-btn" class="export-btn" style="background-color: #999;">Cancel</button>
+                </div>
+            </div>
         </div>
 
         <!-- Editor Modal -->
