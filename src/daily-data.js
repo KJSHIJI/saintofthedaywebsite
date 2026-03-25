@@ -1,14 +1,45 @@
 const DAILY_CONTENT = {
     "01-01": {
-        date: "January 1",
-        saint: "The Circumcision of Jesus",
-        prayer: "Dear Jesus, as You were named and set apart for us, help us to live holy lives dedicated to God. Give us hearts willing to follow Your path with joy and peace.",
-        scripture: "Luke 2:21",
-        scriptureText: "And after eight days were accomplished, that the child should be circumcised, His name was called Jesus, which was called by the angel before He was conceived in the womb.",
-        meaning: "Jesus followed the laws of God and showed us that holiness means obedience to God's love.",
-        story: "When Jesus was born in Bethlehem, His parents, Mary and Joseph, loved Him with a tenderness no earthly parents had ever known. Yet though He was God's Son, Jesus came to live as a true human child, subject to God's law. Eight days after His birth, the law of Moses required that every son be circumcised, and so Mary and Joseph brought their precious Child to the Temple. As the priest performed this ancient ritual, baby Jesus accepted this sign of the covenant between God and His people. In that moment, the Son of God—who could have commanded the stars themselves—humbly submitted to His parents and to God's law. This was His first sacrifice of love, teaching all of us that true greatness lies not in power or pride, but in loving obedience. Jesus calls each of us to this same kind of obedience: not bitter or forced, but joyful and free, given out of love for God.",
-        thought: "When we obey God with joy, even in small things, we become more like Jesus.",
-        action: "Do one chore today without being asked, showing obedience to your parents out of love."
+JANUARY 1 — MARY, THE HOLY MOTHER OF GOD
+
+Story
+
+Long ago, in a small and quiet town called **Nazareth**, there lived a young girl named **Mary**.  
+Her parents were **Saint Joachim and Saint Anne**, who taught her to love God every day.  
+Mary grew up kind, gentle, and prayerful. She listened carefully whenever God was spoken about.
+
+One day, God chose Mary for a very special mission.  
+She became the **Mother of Jesus**, the Son of God.  
+Mary carried Jesus close to her heart, cared for Him, fed Him, and watched Him grow—just like any loving mother.
+
+When Jesus was a baby, Mary protected Him.  
+When He was a child, she guided Him.  
+And when He became a man, she stayed near Him with a trusting heart.
+
+Once, at a wedding in a place called **Cana**, Mary noticed that the people had no wine left.  
+She quietly told Jesus about the problem.  
+Because of Mary’s loving request, **Jesus performed His first miracle** and brought joy to everyone there.  
+This showed how much Jesus listens to His Mother.
+
+Mary teaches children that loving Jesus begins at home—with kindness, prayer, and trust.  
+As the year begins, Mary walks with us like a gentle Mother, holding our hand and leading us closer to Jesus.
+
+Scripture
+
+📖Luke 2:19  
+“But Mary kept all these words, pondering them in her heart.”
+
+Prayer
+
+Dear Jesus, thank You for giving us Your Mother Mary.  
+Thank You for her loving heart and gentle care.  
+Help me listen to You like Mary did.  
+Mary, please lead me to Jesus every day. Amen.
+
+Task of the Day
+
+Smile at your mother (or someone who cares for you) and say “Thank you.”
+
     },
     "12-25": {
         date: "December 25",
