@@ -1,6 +1,6 @@
 /* Saint of the Day - Main Application */
 
-const OWNER_PASSWORD = 'Saint@2026'; // Simple password - change this!
+const OWNER_PASSWORD = 'CHANGE_ME'; // Simple password - change this!
 const UPI_ID = 'yourname@bank'; // Update this with your UPI ID
 const FREE_DATES = ['01-01', '12-25']; // Free preview dates: Jan 1 & Dec 25
 const PAID_ACCESS_DURATION = 365 * 24 * 60 * 60 * 1000; // 1 year in milliseconds
@@ -198,56 +198,59 @@ class SaintOfTheDay {
     }
 
     displayDay(date) {
-        const key = this.getDateKey(date);
-        const content = DAILY_CONTENT[key];
+    const key = this.getDateKey(date);
+    const content = DAILY_CONTENT[key];
+    const container = document.getElementById("daily-content");
 
-        // If content doesn't exist
-        if (!content) {
-            document.getElementById('daily-content').innerHTML = `
-                <div style="text-align: center; padding: 2rem; background: var(--secondary-color); border-radius: 8px; margin: 2rem 0;">
-                    <p style="font-size: 1.1rem; color: var(--light-text);">😊 No content added yet for this day.</p>
-                    <p style="color: var(--light-text); margin-top: 0.5rem;">Check back soon!</p>
-                </div>
-            `;
-            return;
-        }
-
-        // Check if user can read this content (paywall)
-        if (!this.canUserReadContent(key)) {
-            document.getElementById('daily-content').innerHTML = this.getPaywallHTML(content, key);
-            return;
-        }
-
-        // Display full content
-        const html = `
-            <div class="daily-date">${content.date} — ${content.saint}</div>
-
-            <h2>Prayer</h2>
-            <p class="content" style="text-align: justify;">${this.escapeHtml(content.prayer)}</p>
-
-            <h2>Scripture</h2>
-            <p class="scripture-ref">📖 ${this.escapeHtml(content.scripture)}</p>
-            <div class="scripture-text">${this.escapeHtml(content.scriptureText)}</div>
-
-            <h2>Meaning</h2>
-            <div class="meaning">${this.escapeHtml(content.meaning)}</div>
-
-            <h2>Story</h2>
-            <p class="story content">${this.escapeHtml(content.story)}</p>
-
-            <h2>Today's Thought</h2>
-            <p class="content">${this.escapeHtml(content.thought)}</p>
-
-            <h2>Today's Action</h2>
-            <p class="content">${this.escapeHtml(content.action)}</p>
+    // If content doesn't exist at all
+    if (!content) {
+        container.innerHTML = `
+            <div style="text-align:center; padding:2rem; background:var(--secondary-color); border-radius:8px; margin:2rem 0;">
+                <p style="font-size:1.1rem; color:var(--light-text);">😊 No content added yet for this day.</p>
+                <p style="color:var(--light-text); margin-top:0.5rem;">Check back soon!</p>
+            </div>
         `;
-
-        document.getElementById('daily-content').innerHTML = html;
-
-        // Update page counter
-        const dayOfYear = Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 86400000);
-        document.getElementById('page-counter').textContent = `Day ${dayOfYear} of 365`;
+        return;
     }
+
+    // ✅ PAYWALL CHECK (OWNER ALWAYS BYPASSES)
+    if (!this.canUserReadContent(key)) {
+        container.innerHTML = this.getPaywallHTML(content, key);
+        return;
+    }
+
+    // ✅ FULL CONTENT (OWNER OR FREE DAY)
+    const html = `
+        <div class="daily-date">${content.date} — ${content.saint}</div>
+
+        <h2>Prayer</h2>
+        <p class="content" style="text-align:justify;">${this.escapeHtml(content.prayer)}</p>
+
+        <h2>Scripture</h2>
+        <p class="scripture-ref">📖 ${this.escapeHtml(content.scripture)}</p>
+        <div class="scripture-text">${this.escapeHtml(content.scriptureText)}</div>
+
+        <h2>Meaning</h2>
+        <div class="meaning">${this.escapeHtml(content.meaning)}</div>
+
+        <h2>Story</h2>
+        <p class="story content">${this.escapeHtml(content.story)}</p>
+
+        <h2>Today's Thought</h2>
+        <p class="content">${this.escapeHtml(content.thought)}</p>
+
+        <h2>Today's Action</h2>
+        <p class="content">${this.escapeHtml(content.action)}</p>
+    `;
+
+    container.innerHTML = html;
+
+    // Page counter (Day X of 365)
+    const dayOfYear = Math.floor(
+        (date - new Date(date.getFullYear(), 0, 0)) / 86400000
+    );
+    document.getElementById("page-counter").textContent = `Day ${dayOfYear} of 365`;
+}
 
     getPaywallHTML(content, dateKey) {
         return `
