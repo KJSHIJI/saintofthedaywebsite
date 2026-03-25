@@ -2,15 +2,22 @@
 
 const DAILY_CONTENT = {
     "01-01": {
-        date: "January 1",
-        saint: "The Circumcision of Jesus",
-        prayer: "Dear Jesus, as You were named and set apart for us, help us to live holy lives dedicated to God. Give us hearts willing to follow Your path with joy and peace.",
-        scripture: "Luke 2:21",
-        scriptureText: "And after eight days were accomplished, that the child should be circumcised, His name was called Jesus, which was called by the angel before He was conceived in the womb.",
-        meaning: "Jesus followed the laws of God and showed us that holiness means obedience to God's love.",
-        story: "When Jesus was born in Bethlehem, His parents, Mary and Joseph, loved Him with a tenderness no earthly parents had ever known. Yet though He was God's Son, Jesus came to live as a true human child, subject to God's law. Eight days after His birth, the law of Moses required that every son be circumcised, and so Mary and Joseph brought their precious Child to the Temple. As the priest performed this ancient ritual, baby Jesus accepted this sign of the covenant between God and His people. In that moment, the Son of God—who could have commanded the stars themselves—humbly submitted to His parents and to God's law. This was His first sacrifice of love, teaching all of us that true greatness lies not in power or pride, but in loving obedience. Jesus calls each of us to this same kind of obedience: not bitter or forced, but joyful and free, given out of love for God.",
-        thought: "When we obey God with joy, even in small things, we become more like Jesus.",
-        action: "Do one chore today without being asked, showing obedience to your parents out of love."
+    title: "January 1  Mary, Mother of God",
+    story: "Mary lived in the small town of Nazareth and was chosen by God to be the Mother of Jesus. Tradition tells us that Mary was born in Jerusalem to holy parents named Joachim and Anne, who prayed for many years for a child. When the angel Gabriel appeared to Mary, she humbly said yes to God’s plan, even though she did not fully understand what would happen. Because Mary is the Mother of Jesus, who is truly God, the Church honors her as the Mother of God. On January 1, her feast day, we remember Mary’s loving faith and trust in God. After Jesus was born, Mary cared for Him gently and listened quietly to all that happened. She kept God’s words in her heart and trusted Him each day. Mary teaches us that holiness begins with saying yes to God and trusting Him with our lives.",
+    bibleVerse: "Bible verse: Luke 2:19\nBut Mary kept all these words, pondering them in her heart.",
+    prayer: "Dear Mother Mary, you trusted God with your whole heart and gave the world Jesus. Please pray for us as we begin this new year. Help us trust God, love Jesus, and follow Him every day.",
+    action: "Say a Hail Mary today and ask Mother Mary to help you obey God and be kind to others this year."
+},
+     "01-02": {
+        date: "January 2",
+        saint: "Saint Basil the Great and Saint Gregory of Nazianzus",
+        prayer: "Holy Basil and Gregory, teachers of wisdom and holiness, pray for us that we may grow in learning and kindness. Help us to be brave in speaking God's truth.",
+        scripture: "2 Timothy 2:15",
+        scriptureText: "Carefully study to present thyself to God approved, a workman that needeth not to be ashamed, rightly handling the word of truth.",
+        meaning: "We become wise and strong when we study God's truth and share it with love.",
+        story: "Long ago in a land called Cappadocia, two friends grew up together. Their names were Basil and Gregory. Both came from families that loved God deeply, and both were brilliant students who read every book they could find. When they grew older, they became priests and great teachers of the Church. Basil founded monasteries where monks lived together, praying and working and studying Scripture. Gregory became known as 'the Theologian' because he taught so many people about God's nature and God's love. These two friends showed that it is beautiful and holy to use our minds to understand God better. They wrote letters to each other that are still read today. But more than being smart, Basil and Gregory were kind. Basil helped poor people and started the first hospital. Gregory stood up for truth even when it was dangerous. They taught that real wisdom is not just knowing many things—it is knowing God and living with love. The story of their friendship shows us that the smartest thing we can do is make friends who help us grow closer to God.",
+        thought: "The best friendships help us grow not just smarter, but holier.",
+        action: "Spend time today learning something new about God, then tell a friend what you learned."
     },
 "08-21": {
         date: "August 21",
@@ -33,18 +40,6 @@ const DAILY_CONTENT = {
         story: "On a cold winter's night in a small town called Bethlehem, something extraordinary happened. Mary and Joseph had traveled far from home, tired and seeking shelter. When they arrived, every inn was full—there was no room anywhere. So they found their way to a humble stable, where animals were kept for warmth. It was in this simple place, surrounded by hay and the gentle sounds of cattle, that Jesus was born. Mary wrapped her newborn Son in the cloth she had brought, and laid Him in a manger—the place where animals ate their food. This was the beginning of the great love story between God and mankind. The King of Heaven chose poverty, not because He had to, but to show us that He loves the poor and humble. He wanted everyone to know that God does not come in golden robes or marble palaces, but in humility and gentleness. Every child who feels lonely, every person who feels forgotten, can look at the baby Jesus in that stable and know: God sees you, God loves you, God came for you.",
         thought: "God's greatest gift came not in a palace, but in a stable, to show us He loves everyone.",
         action: "Give a small gift to someone today who feels left out or lonely, just as Jesus was born in a humble stable."
-    },
-
-    "01-02": {
-        date: "January 2",
-        saint: "Saint Basil the Great and Saint Gregory of Nazianzus",
-        prayer: "Holy Basil and Gregory, teachers of wisdom and holiness, pray for us that we may grow in learning and kindness. Help us to be brave in speaking God's truth.",
-        scripture: "2 Timothy 2:15",
-        scriptureText: "Carefully study to present thyself to God approved, a workman that needeth not to be ashamed, rightly handling the word of truth.",
-        meaning: "We become wise and strong when we study God's truth and share it with love.",
-        story: "Long ago in a land called Cappadocia, two friends grew up together. Their names were Basil and Gregory. Both came from families that loved God deeply, and both were brilliant students who read every book they could find. When they grew older, they became priests and great teachers of the Church. Basil founded monasteries where monks lived together, praying and working and studying Scripture. Gregory became known as 'the Theologian' because he taught so many people about God's nature and God's love. These two friends showed that it is beautiful and holy to use our minds to understand God better. They wrote letters to each other that are still read today. But more than being smart, Basil and Gregory were kind. Basil helped poor people and started the first hospital. Gregory stood up for truth even when it was dangerous. They taught that real wisdom is not just knowing many things—it is knowing God and living with love. The story of their friendship shows us that the smartest thing we can do is make friends who help us grow closer to God.",
-        thought: "The best friendships help us grow not just smarter, but holier.",
-        action: "Spend time today learning something new about God, then tell a friend what you learned."
     }
 };
 
