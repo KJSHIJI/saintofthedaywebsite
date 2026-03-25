@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint of the Day - KDP Interior PDF</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            color: #2c2c2c;
+            background: white;
+            line-height: 1.7;
+        }
+
+        /* Print styles */
+        @page {
+            size: 6in 9in;
+            margin: 0.75in;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        .print-controls {
+            background: #f5f5f5;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .print-controls button {
+            padding: 0.75rem 1.5rem;
+            background: #2c5282;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0 0.5rem;
+        }
+
+        .print-controls button:hover {
+            background: #1a3a5c;
+        }
+
+        .cover-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 7.5in;
+            text-align: center;
+            padding: 1in;
+            background: linear-gradient(135deg, #2c5282 0%, #4a7ba7 100%);
+            color: white;
+        }
+
+        .cover-page h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .cover-page .author {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .cover-page .tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .copyright-page {
+            page-break-after: always;
+            padding: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .copyright-page p {
+            margin-bottom: 1rem;
+        }
+
+        .toc-page {
+            page-break-after: always;
+            padding: 1rem;
+        }
+
+        .toc-page h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c5282;
+        }
+
+        .toc-content {
+            columns: 2;
+            column-gap: 1rem;
+        }
+
+        .toc-entry {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .daily-entry {
+            page-break-after: always;
+            padding: 1rem;
+            min-height: 7.5in;
+        }
+
+        .daily-entry h1 {
+            font-size: 1.8rem;
+            color: #2c5282;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .daily-entry .date {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .daily-entry h2 {
+            font-size: 1.2rem;
+            color: #2c5282;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.25rem;
+        }
+
+        .daily-entry p {
+            margin-bottom: 0.75rem;
+            text-align: justify;
+        }
+
+        .scripture-ref {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .scripture-text {
+            border-left: 3px solid #2c5282;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .meaning {
+            background: #f9f9f9;
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .no-content-entry {
+            page-break-after: always;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 7.5in;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #999;
+        }
+
+        .owner-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .owner-note strong {
+            color: #d39e00;
+        }
+
+        @media print {
+            .print-controls {
+                display: none;
+            }
+            .owner-note {
+                background: white;
+                border: none;
+                page-break-inside: avoid;
+                color: #333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-controls no-print">
+        <button onclick="window.print()">🖨️ Print to PDF</button>
+        <button onclick="window.close()">✕ Close</button>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+            ℹ️ Use Print to PDF to save as PDF for KDP upload.
+        </p>
+    </div>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1>Saint of the Day</h1>
+        <div class="author">By SHIJI KJ</div>
+        <div class="tagline">Daily Catholic Devotional for Children</div>
+    </div>
+
+    <!-- Copyright Page -->
+    <div class="copyright-page">
+        <h2 style="margin-bottom: 1.5rem;">Copyright Information</h2>
+        <p><strong>Saint of the Day</strong></p>
+        <p>By SHIJI KJ</p>
+        <p style="margin-top: 1rem;">© 2026 SHIJI KJ. All rights reserved.</p>
+        <p>Scripture quotations are from the Douay-Rheims Bible (Public Domain).</p>
+        <p style="margin-top: 1rem;">This book is published for children and families seeking daily spiritual encouragement through the lives of saints and biblical guidance.</p>
+        <p style="margin-top: 1rem;">All content is original and family-friendly.</p>
+        <p style="margin-top: 1.5rem; border-top: 1px solid #ddd; padding-top: 1rem; font-size: 0.85rem;">
+            Published through Amazon KDP.<br>
+            ISBN: _______________<br>
+            (To be assigned by KDP upon publication)
+        </p>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc-page">
+        <h2>Table of Contents</h2>
+        <div class="toc-content" id="toc-content">
+            <!-- Generated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Daily Entries -->
+    <div id="entries-container">
+        <!-- Generated by JavaScript -->
+    </div>
+
+    <script>
+        // Get URL parameters for trim size
+        const urlParams = new URLSearchParams(window.location.search);
+        const trimSize = urlParams.get('trim') || '6x9';
+        const format = urlParams.get('format') || 'paperback';
+
+        // Load DAILY_CONTENT from parent window or localStorage
+        let DAILY_CONTENT = window.parent.DAILY_CONTENT || JSON.parse(localStorage.getItem('DAILY_CONTENT_backup') || '{}');
+
+        function generateContent() {
+            const entriesContainer = document.getElementById('entries-container');
+            const tocContent = document.getElementById('toc-content');
+            let tocHTML = '';
+            let entriesHTML = '';
+
+            // Month names for display
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+
+            // Generate all entries in date order
+            for (let month = 1; month <= 12; month++) {
+                for (let day = 1; day <= 31; day++) {
+                    const monthStr = String(month).padStart(2, '0');
+                    const dayStr = String(day).padStart(2, '0');
+                    const key = `${monthStr}-${dayStr}`;
+                    
+                    const content = DAILY_CONTENT[key];
+                    
+                    if (!content) continue;
+                    
+                    const displayDate = `${monthNames[month - 1]} ${day}, 2026`;
+                    const tocEntry = `<div class="toc-entry">${displayDate} — ${content.saint.substring(0, 50)}</div>`;
+                    tocHTML += tocEntry;
+
+                    // Check if content has actual data (not placeholder)
+                    const hasContent = content.saint && !content.saint.includes('(Content needed');
+
+                    if (hasContent) {
+                        entriesHTML += `
+                            <div class="daily-entry">
+                                <div class="date">${displayDate}</div>
+                                <h1>${escapeHtml(content.saint)}</h1>
+
+                                <h2>Prayer</h2>
+                                <p>${escapeHtml(content.prayer)}</p>
+
+                                <h2>Scripture</h2>
+                                <p class="scripture-ref">📖 ${escapeHtml(content.scripture)}</p>
+                                <div class="scripture-text">${escapeHtml(content.scriptureText)}</div>
+
+                                <h2>Meaning</h2>
+                                <div class="meaning">${escapeHtml(content.meaning)}</div>
+
+                                <h2>Story</h2>
+                                <p>${escapeHtml(content.story)}</p>
+
+                                <h2>Today's Thought</h2>
+                                <p>${escapeHtml(content.thought)}</p>
+
+                                <h2>Today's Action</h2>
+                                <p>${escapeHtml(content.action)}</p>
+                            </div>
+                        `;
+                    } else {
+                        entriesHTML += `<div class="no-content-entry">[Content to be added]</div>`;
+                    }
+                }
+            }
+
+            tocContent.innerHTML = tocHTML;
+            entriesContainer.innerHTML = entriesHTML;
+
+            // Add owner note if in non-print mode
+            if (!window.matchMedia('print').matches) {
+                const note = document.createElement('div');
+                note.className = 'owner-note';
+                note.innerHTML = `
+                    <strong>📝 Owner Note:</strong> This preview shows entries in print-ready format. 
+                    Use your browser's Print function (Ctrl+P or Cmd+P) to save as PDF. 
+                    Upload the PDF to Amazon KDP along with the matching Cover Wrap PDF.
+                `;
+                document.body.insertBefore(note, document.body.firstChild.nextSibling);
+            }
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        // Generate content when page loads
+        window.addEventListener('load', () => {
+            generateContent();
+        });
+    </script>
+</body>
+</html>
