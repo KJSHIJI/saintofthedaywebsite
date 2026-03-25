@@ -22,7 +22,7 @@ const DAILY_CONTENT = {
         story: "Long ago in a small village in Italy, a poor boy named Giuseppe Sarto grew up helping his family and serving at church. His parents were not rich, but they taught him to love God above all things. Giuseppe worked very hard in school and became a priest, then a bishop, and later the Pope. When he became Pope Pius X, he did not live in luxury or pride. He stayed simple, kind, and close to ordinary people. He loved children very much and believed they should not be kept away from Jesus. At that time, many people thought children should wait many years before receiving Holy Communion. Pope Pius X changed this because he knew Jesus wants children to come to Him early, with pure hearts and simple faith. Because of him, children today can receive Jesus in the Eucharist at a young age. Pope Pius X also protected the Church by teaching the truth with courage. His life shows us that holiness is not about being powerful or famous, but about loving Jesus with humility and trust.",
         thought: "Jesus loves simple hearts and wants to be close to us, especially in the Eucharist.",
         action: "Spend a quiet moment today thanking Jesus for His presence in the Holy Eucharist."
-    }
+    },
     "12-25": {
         date: "December 25",
         saint: "The Nativity of Our Lord Jesus Christ",
@@ -81,12 +81,12 @@ function generatePlaceholders() {
 
     days.forEach(key => {
         if (!DAILY_CONTENT[key]) {
-            const [month, day] = key.split('-');
-            const monthName = monthNames[parseInt(month) - 1];
+            const [month, day] = key.split("-");
+            const monthName = monthNames[parseInt(month, 10) - 1];
 
             DAILY_CONTENT[key] = {
-                date: `${monthName} ${parseInt(day)}`,
-                saint: `(Content needed — add verified facts here)`,
+                date: `${monthName} ${parseInt(day, 10)}`,
+                saint: "(Content needed — add verified facts here)",
                 prayer: "(Content needed — add verified facts here)",
                 scripture: "(Content needed — add verified facts here)",
                 scriptureText: "(Content needed — add verified facts here)",
