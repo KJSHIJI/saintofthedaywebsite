@@ -13,13 +13,12 @@ const KDP_TRIM_SIZES = {
     "8.5x11": { width: 8.5, height: 11, margins: "0.75in" }
 };
 
-// Pricing configuration (UPDATED)
+// Pricing configuration
 const PRICING = {
-    day:   { price: 5,   duration: 1 * 24 * 60 * 60 * 1000,   label: "1 Day (₹5)" },
-    month: { price: 100, duration: 30 * 24 * 60 * 60 * 1000,  label: "1 Month (₹100)" },
-    year:  { price: 500, duration: 365 * 24 * 60 * 60 * 1000, label: "Full Year / Full Book (₹500)" }
+    day: { price: 5, duration: 1 * 24 * 60 * 60 * 1000, label: "1 Day" },
+    month: { price: 200, duration: 30 * 24 * 60 * 60 * 1000, label: "1 Month" },
+    year: { price: 999, duration: 365 * 24 * 60 * 60 * 1000, label: "1 Year" }
 };
-
 
 class SaintOfTheDay {
     constructor() {
@@ -82,77 +81,74 @@ class SaintOfTheDay {
         return { title, story, bibleVerse, meaning, prayer, action, _raw: entry };
     }
 
-    // ---------- Init (SAFE VERSION) ----------
-init() {
-    this.loadTheme();
-    this.checkOwnerLogin();
-    this.checkUserAccessStatus();
-    this.loadKDPPreferences();
+    // ---------- Init ----------
+    init() {
+        this.loadTheme();
+        this.checkOwnerLogin();
+        this.checkUserAccessStatus();
+        this.loadKDPPreferences();
 
-    this.setupEventListeners();
-    this.updateUIBasedOnAccess();
+        this.setupEventListeners();
+        this.updateUIBasedOnAccess();
 
-    // ✅ SAFELY set today's date without valueAsDate
-    const dateInput = document.getElementById("date-input");
-    this.currentDate = new Date();
+        // Set date input to today (if it exists)
+        const dateInput = document.getElementById("date-input");
+        if (dateInput) dateInput.valueAsDate = this.currentDate;
 
-    if (dateInput) {
-        // Use YYYY-MM-DD string (safe for <input type="date">)
-        dateInput.value = this.currentDate.toISOString().slice(0, 10);
+        this.updateDateDisplay();
+        this.displayDay(this.currentDate);
     }
 
-    this.updateDateDisplay();
-    this.displayDay(this.currentDate);
-}
-
-loadSavedEntries() {
-    // Load all entries from localStorage safely
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        if (key && key.startsWith("DAILY_CONTENT_")) {
-            const dateKey = key.replace("DAILY_CONTENT_", "");
-            try {
-                DAILY_CONTENT[dateKey] = JSON.parse(localStorage.getItem(key));
-            } catch (e) {
-                console.error("Error loading entry:", dateKey, e);
+    loadSavedEntries() {
+        // Load all entries from localStorage
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith("DAILY_CONTENT_")) {
+                const dateKey = key.replace("DAILY_CONTENT_", "");
+                try {
+                    DAILY_CONTENT[dateKey] = JSON.parse(localStorage.getItem(key));
+                } catch (e) {
+                    console.error("Error loading entry:", dateKey, e);
+                }
             }
         }
     }
-}
 
-setupEventListeners() {
-    // ✅ Date input (SAFE parsing)
-    this.safeOn("date-input", "change", (e) => {
-        const value = e.target.value; // YYYY-MM-DD
-        if (!value) return;
+    setupEventListeners() {
+        // Date input
+        this.safeOn("date-input", "change", (e) => {
+            this.currentDate = new Date(e.target.value + "T00:00:00");
+            this.displayDay(this.currentDate);
+            this.updateDateDisplay();
+        });
 
-        this.currentDate = new Date(value + "T00:00:00");
-        this.displayDay(this.currentDate);
-        this.updateDateDisplay();
-    });
+        // Today
+        this.safeOn("today-btn", "click", () => {
+            this.currentDate = new Date();
+            this.displayDay(this.currentDate);
+            this.updateDateDisplay();
+        });
 
-    // ✅ Today button
-    this.safeOn("today-btn", "click", () => {
-        this.currentDate = new Date();
-        this.displayDay(this.currentDate);
-        this.updateDateDisplay();
-    });
+        // Random Day (FIXED)
+        this.safeOn("randomDayBtn", "click", () => {
+            // Ensure placeholders exist (if you use generatePlaceholders in daily-data.js)
+            if (typeof generatePlaceholders === "function") {
+                generatePlaceholders();
+            }
 
-    // ✅ Random Day (SAFE & SIMPLE)
-    this.safeOn("randomDayBtn", "click", () => {
-        const keys = Object.keys(DAILY_CONTENT || {});
-        if (!keys.length) {
-            console.error("DAILY_CONTENT is empty");
-            return;
-        }
+            const keys = Object.keys(DAILY_CONTENT || {});
+            if (!keys.length) {
+                console.error("DAILY_CONTENT is empty");
+                return;
+            }
 
-        const randomKey = keys[Math.floor(Math.random() * keys.length)];
-        this.currentDate = this.parseDate(randomKey);
+            const randomKey = keys[Math.floor(Math.random() * keys.length)];
+            this.currentDate = this.parseDate(randomKey);
 
-        this.displayDay(this.currentDate);
-        this.updateDateDisplay();
-    });
-}
+            this.displayDay(this.currentDate);
+            this.updateDateDisplay();
+        });
+
         // Prev/Next
         this.safeOn("prev-btn", "click", () => {
             this.currentDate.setDate(this.currentDate.getDate() - 1);
@@ -556,85 +552,94 @@ Scripture quotations are from the Douay-Rheims Bible (Public Domain).</p>
     }
 
     // ---------- Editor ----------
-    // ---------- Editor (UPDATED TO CURRENT BOOK FORMAT) ----------
+    openEditor() {
+        if (!this.isOwnerLoggedIn) {
+            alert("❌ Only the owner can edit content. Please login first.");
+            this.openLoginModal();
+            return;
+        }
 
-openEditor() {
-    if (!this.isOwnerLoggedIn) {
-        alert("❌ Only the owner can edit content. Please login first.");
-        this.openLoginModal();
-        return;
+        const key = this.getDateKey(this.currentDate);
+        const raw = DAILY_CONTENT[key];
+        const content = this.normalizeEntry(raw, key);
+
+        // Fill existing editor fields (keep your current HTML IDs)
+        const saintField = document.getElementById("editor-saint");
+        const prayerField = document.getElementById("editor-prayer");
+        const scriptureRefField = document.getElementById("editor-scripture");
+        const scriptureTextField = document.getElementById("editor-scripture-text");
+        const meaningField = document.getElementById("editor-meaning");
+        const storyField = document.getElementById("editor-story");
+        const actionField = document.getElementById("editor-action");
+
+        const dateField = document.getElementById("editor-date");
+        if (dateField) dateField.value = key;
+
+        // Extract saint from title if possible (e.g., "January 1  Mary, Mother of God")
+        let saintName = "";
+        if (content && content.title) {
+            const parts = content.title.split("  ");
+            saintName = parts.length >= 2 ? parts.slice(1).join("  ").trim() : "";
+        }
+        if (saintField) saintField.value = saintName || "";
+
+        if (storyField) storyField.value = (content && content.story) || "";
+        if (meaningField) meaningField.value = (content && content.meaning) || "";
+        if (prayerField) prayerField.value = (content && content.prayer) || "";
+        if (actionField) actionField.value = (content && content.action) || "";
+
+        // Parse bibleVerse into ref + text if possible
+        let ref = "";
+        let verseText = "";
+        if (content && content.bibleVerse) {
+            const lines = String(content.bibleVerse).split("\n");
+            if (lines[0]) ref = lines[0].replace(/^Bible verse:\s*/i, "").trim();
+            verseText = lines.slice(1).join("\n").trim();
+        }
+        if (scriptureRefField) scriptureRefField.value = ref;
+        if (scriptureTextField) scriptureTextField.value = verseText;
+
+        const modal = document.getElementById("editor-modal");
+        if (modal) modal.style.display = "block";
     }
 
-    const key = this.getDateKey(this.currentDate);
-    const content = DAILY_CONTENT[key] || {};
-
-    // Populate editor fields (NEW FORMAT ONLY)
-    const dateField = document.getElementById("editor-date");
-    const titleField = document.getElementById("editor-title");
-    const storyField = document.getElementById("editor-story");
-    const bibleVerseField = document.getElementById("editor-bibleVerse");
-    const meaningField = document.getElementById("editor-meaning");
-    const prayerField = document.getElementById("editor-prayer");
-    const actionField = document.getElementById("editor-action");
-
-    if (dateField) dateField.value = key;
-    if (titleField) titleField.value = content.title || "";
-    if (storyField) storyField.value = content.story || "";
-    if (bibleVerseField) bibleVerseField.value = content.bibleVerse || "";
-    if (meaningField) meaningField.value = content.meaning || "";
-    if (prayerField) prayerField.value = content.prayer || "";
-    if (actionField) actionField.value = content.action || "";
-
-    const modal = document.getElementById("editor-modal");
-    if (modal) modal.style.display = "block";
-}
-
-closeEditor() {
-    const modal = document.getElementById("editor-modal");
-    if (modal) modal.style.display = "none";
-}
-
-saveEntry() {
-    const key = document.getElementById("editor-date")?.value.trim() || "";
-
-    if (!/^\d{2}-\d{2}$/.test(key)) {
-        alert("Please enter date in MM-DD format (e.g., 01-15)");
-        return;
+    closeEditor() {
+        const modal = document.getElementById("editor-modal");
+        if (modal) modal.style.display = "none";
     }
 
-    const title = document.getElementById("editor-title")?.value.trim();
-    const story = document.getElementById("editor-story")?.value.trim();
-    const bibleVerse = document.getElementById("editor-bibleVerse")?.value.trim();
-    const meaning = document.getElementById("editor-meaning")?.value.trim();
-    const prayer = document.getElementById("editor-prayer")?.value.trim();
-    const action = document.getElementById("editor-action")?.value.trim();
+    saveEntry() {
+        const key = document.getElementById("editor-date")?.value || "";
 
-    // Basic validation (prevents empty broken entries)
-    if (!title || !story || !bibleVerse) {
-        alert("❌ Please fill at least Title, Story, and Bible Verse.");
-        return;
+        if (!/^\d{2}-\d{2}$/.test(key)) {
+            alert("Please enter date in MM-DD format (e.g., 01-15)");
+            return;
+        }
+
+        const saintName = document.getElementById("editor-saint")?.value || "(Saint/Feast needed)";
+        const prayer = document.getElementById("editor-prayer")?.value || "(Prayer needed)";
+        const scriptureRef = document.getElementById("editor-scripture")?.value || "(Reference needed)";
+        const scriptureText = document.getElementById("editor-scripture-text")?.value || "(Verse text needed)";
+        const meaning = document.getElementById("editor-meaning")?.value || "(Meaning needed)";
+        const story = document.getElementById("editor-story")?.value || "(Story needed)";
+        const action = document.getElementById("editor-action")?.value || "(Task needed)";
+
+        const title = `${this.getMonthDayFull(key)}  ${saintName}`.trim();
+        const bibleVerse = `Bible verse: ${scriptureRef}\n${scriptureText}`.trim();
+
+        const entry = { title, story, bibleVerse, meaning, prayer, action };
+
+        DAILY_CONTENT[key] = entry;
+        localStorage.setItem("DAILY_CONTENT_" + key, JSON.stringify(entry));
+
+        alert("✅ Entry saved successfully!");
+        this.closeEditor();
+
+        this.currentDate = this.parseDate(key);
+        this.displayDay(this.currentDate);
+        this.updateDateDisplay();
     }
 
-    const entry = {
-        title,
-        story,
-        bibleVerse,
-        meaning: meaning || "(Meaning needed)",
-        prayer: prayer || "(Prayer needed)",
-        action: action || "(Task needed)"
-    };
-
-    // Save entry
-    DAILY_CONTENT[key] = entry;
-    localStorage.setItem("DAILY_CONTENT_" + key, JSON.stringify(entry));
-
-    alert("✅ Entry saved successfully!");
-    this.closeEditor();
-
-    this.currentDate = this.parseDate(key);
-    this.displayDay(this.currentDate);
-    this.updateDateDisplay();
-}
     // ---------- Date formatting ----------
     getMonthDay(dateKey) {
         const [month, day] = dateKey.split("-");
@@ -685,201 +690,162 @@ saveEntry() {
         }
     }
 
-    // ===== OWNER AUTHENTICATION & PAYWALL METHODS (UPDATED) =====
-
-// ✅ CHANGE THIS AFTER AMAZON PUBLISHING
-const AMAZON_BOOK_URL = "https://www.amazon.in/dp/YOUR_BOOK_ASIN";
-
-checkOwnerLogin() {
-    const ownerLoggedIn = sessionStorage.getItem("ownerLoggedIn") === "true";
-    if (ownerLoggedIn) this.isOwnerLoggedIn = true;
-}
-
-checkUserAccessStatus() {
-    // Cleanup expired purchases automatically
-    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
-    const now = Date.now();
-
-    const active = purchases.filter(p => {
-        const purchaseTime = parseInt(p.purchaseTime, 10);
-        const duration = parseInt(p.duration, 10);
-        return now <= (purchaseTime + duration);
-    });
-
-    if (active.length !== purchases.length) {
-        localStorage.setItem("purchases", JSON.stringify(active));
+    // ===== OWNER AUTHENTICATION & PAYWALL METHODS =====
+    checkOwnerLogin() {
+        const ownerLoggedIn = sessionStorage.getItem("ownerLoggedIn") === "true";
+        if (ownerLoggedIn) this.isOwnerLoggedIn = true;
     }
-}
 
-canUserReadContent(dateKey) {
-    if (this.isOwnerLoggedIn) return true;
-    if (FREE_DATES.includes(dateKey)) return true;
-    if (this.hasUserPurchasedAccess()) return true;
-    return false;
-}
+    checkUserAccessStatus() {
+        const paidAccessTime = localStorage.getItem("paidAccessTime");
+        if (!paidAccessTime) return;
 
-hasUserPurchasedAccess() {
-    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
-    const now = Date.now();
-
-    return purchases.some(p => {
-        const purchaseTime = parseInt(p.purchaseTime, 10);
-        const duration = parseInt(p.duration, 10);
-        return now <= (purchaseTime + duration);
-    });
-}
-
-// ✅ SHOW ACCESS STATUS + EXPIRY CLEARLY
-getAccessStatusText() {
-    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
-    const now = Date.now();
-
-    if (!purchases.length) return "";
-
-    const active = purchases
-        .map(p => ({
-            ...p,
-            expiresAt: parseInt(p.purchaseTime, 10) + parseInt(p.duration, 10)
-        }))
-        .filter(p => now <= p.expiresAt)
-        .sort((a, b) => b.expiresAt - a.expiresAt)[0];
-
-    if (!active) return "";
-
-    return `✅ Access Active (${active.type.toUpperCase()} plan) — valid until ${new Date(active.expiresAt).toLocaleString()}`;
-}
-
-updateUIBasedOnAccess() {
-    const ownerActionsDiv = document.getElementById("owner-actions");
-    const ownerLoginBtn = document.getElementById("owner-login-btn");
-    const ownerLogoutBtn = document.getElementById("owner-logout-btn");
-
-    if (this.isOwnerLoggedIn) {
-        if (ownerActionsDiv) {
-            ownerActionsDiv.style.display = "flex";
-            ownerActionsDiv.style.flexDirection = "column";
+        const accessTimestamp = parseInt(paidAccessTime, 10);
+        const now = Date.now();
+        if (now - accessTimestamp < PAID_ACCESS_DURATION) {
+            this.userHasPaidAccess = true;
+        } else {
+            localStorage.removeItem("paidAccessTime");
+            this.userHasPaidAccess = false;
         }
-        if (ownerLoginBtn) ownerLoginBtn.style.display = "none";
-        if (ownerLogoutBtn) ownerLogoutBtn.style.display = "inline-block";
-    } else {
-        if (ownerActionsDiv) ownerActionsDiv.style.display = "none";
-        if (ownerLoginBtn) ownerLoginBtn.style.display = "inline-block";
-        if (ownerLogoutBtn) ownerLogoutBtn.style.display = "none";
     }
-}
 
-openLoginModal() {
-    const m = document.getElementById("login-modal");
-    if (m) m.style.display = "block";
-    const pwd = document.getElementById("owner-password");
-    if (pwd) pwd.focus();
-}
+    canUserReadContent(dateKey) {
+        if (this.isOwnerLoggedIn) return true;
+        if (FREE_DATES.includes(dateKey)) return true;
+        if (this.hasUserPurchasedAccess(dateKey)) return true;
+        return false;
+    }
 
-closeLoginModal() {
-    const m = document.getElementById("login-modal");
-    if (m) m.style.display = "none";
-    const pwd = document.getElementById("owner-password");
-    if (pwd) pwd.value = "";
-}
+    hasUserPurchasedAccess(dateKey) {
+        const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+        const now = Date.now();
 
-login() {
-    const pwd = document.getElementById("owner-password");
-    const password = pwd ? pwd.value : "";
+        for (let purchase of purchases) {
+            const purchaseTime = parseInt(purchase.purchaseTime, 10);
+            const duration = parseInt(purchase.duration, 10);
+            const expiresAt = purchaseTime + duration;
+            if (now >= purchaseTime && now <= expiresAt) return true;
+        }
+        return false;
+    }
 
-    if (password === OWNER_PASSWORD) {
-        this.isOwnerLoggedIn = true;
-        sessionStorage.setItem("ownerLoggedIn", "true");
-        this.closeLoginModal();
-        this.updateUIBasedOnAccess();
-        alert("✅ Owner login successful!");
-        this.displayDay(this.currentDate);
-    } else {
-        alert("❌ Incorrect password.");
+    updateUIBasedOnAccess() {
+        const ownerActionsDiv = document.getElementById("owner-actions");
+        const ownerLoginBtn = document.getElementById("owner-login-btn");
+        const ownerLogoutBtn = document.getElementById("owner-logout-btn");
+
+        if (this.isOwnerLoggedIn) {
+            if (ownerActionsDiv) {
+                ownerActionsDiv.style.display = "flex";
+                ownerActionsDiv.style.flexDirection = "column";
+            }
+            if (ownerLoginBtn) ownerLoginBtn.style.display = "none";
+            if (ownerLogoutBtn) ownerLogoutBtn.style.display = "inline-block";
+        } else {
+            if (ownerActionsDiv) ownerActionsDiv.style.display = "none";
+            if (ownerLoginBtn) ownerLoginBtn.style.display = "inline-block";
+            if (ownerLogoutBtn) ownerLogoutBtn.style.display = "none";
+        }
+    }
+
+    openLoginModal() {
+        const m = document.getElementById("login-modal");
+        if (m) m.style.display = "block";
+        const pwd = document.getElementById("owner-password");
+        if (pwd) pwd.focus();
+    }
+
+    closeLoginModal() {
+        const m = document.getElementById("login-modal");
+        if (m) m.style.display = "none";
+        const pwd = document.getElementById("owner-password");
         if (pwd) pwd.value = "";
     }
-}
 
-logout() {
-    if (confirm("Are you sure you want to logout?")) {
-        this.isOwnerLoggedIn = false;
-        sessionStorage.setItem("ownerLoggedIn", "false");
-        this.updateUIBasedOnAccess();
-        alert("✅ Logged out successfully.");
+    login() {
+        const pwd = document.getElementById("owner-password");
+        const password = pwd ? pwd.value : "";
+
+        if (password === OWNER_PASSWORD) {
+            this.isOwnerLoggedIn = true;
+            sessionStorage.setItem("ownerLoggedIn", "true");
+            this.closeLoginModal();
+            this.updateUIBasedOnAccess();
+            alert("✅ Owner login successful!");
+            this.displayDay(this.currentDate);
+        } else {
+            alert("❌ Incorrect password. Try again.");
+            if (pwd) pwd.value = "";
+        }
+    }
+
+    logout() {
+        if (confirm("Are you sure you want to logout?")) {
+            this.isOwnerLoggedIn = false;
+            sessionStorage.setItem("ownerLoggedIn", "false");
+            this.updateUIBasedOnAccess();
+            alert("✅ Logged out successfully.");
+            this.displayDay(this.currentDate);
+        }
+    }
+
+    openPaymentModal() {
+        const paymentInfo = localStorage.getItem("paymentInfo") || "";
+        const t = document.getElementById("payment-info");
+        if (t) t.value = paymentInfo;
+        const m = document.getElementById("payment-modal");
+        if (m) m.style.display = "block";
+    }
+
+    closePaymentModal() {
+        const m = document.getElementById("payment-modal");
+        if (m) m.style.display = "none";
+    }
+
+    savePaymentInfo() {
+        const t = document.getElementById("payment-info");
+        const paymentInfo = t ? t.value.trim() : "";
+
+        if (paymentInfo) {
+            localStorage.setItem("paymentInfo", paymentInfo);
+            alert("✅ Payment information saved!");
+        } else {
+            localStorage.removeItem("paymentInfo");
+            alert("✅ Payment information removed.");
+        }
+        this.closePaymentModal();
+    }
+
+    openPricingModal() {
+        const m = document.getElementById("pricing-modal");
+        if (m) m.style.display = "block";
+    }
+
+    closePricingModal() {
+        const m = document.getElementById("pricing-modal");
+        if (m) m.style.display = "none";
+    }
+
+    confirmPurchase(planType) {
+        const pricing = PRICING[planType];
+        if (!pricing) return;
+
+        const now = Date.now();
+        const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+        purchases.push({
+            type: planType,
+            price: pricing.price,
+            purchaseTime: now.toString(),
+            duration: pricing.duration.toString(),
+            expiresAt: new Date(now + pricing.duration).toLocaleDateString()
+        });
+        localStorage.setItem("purchases", JSON.stringify(purchases));
+        this.closePricingModal();
+        alert(`✅ ${pricing.label} access granted!`);
         this.displayDay(this.currentDate);
     }
-}
 
-// ✅ PAYMENT & PRICING
-openPricingModal() {
-    const m = document.getElementById("pricing-modal");
-    if (m) m.style.display = "block";
-}
-
-closePricingModal() {
-    const m = document.getElementById("pricing-modal");
-    if (m) m.style.display = "none";
-}
-
-// ✅ CONFIRM PURCHASE WITH AUTO EXPIRY
-confirmPurchase(planType) {
-    const pricing = PRICING[planType];
-    if (!pricing) return;
-
-    const now = Date.now();
-    const expiresAt = now + pricing.duration;
-
-    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
-    purchases.push({
-        type: planType,
-        price: pricing.price,
-        purchaseTime: now.toString(),
-        duration: pricing.duration.toString()
-    });
-
-    localStorage.setItem("purchases", JSON.stringify(purchases));
-    this.closePricingModal();
-
-    alert(
-        `✅ ${pricing.label} access granted!\n\n` +
-        `Valid until: ${new Date(expiresAt).toLocaleString()}\n\n` +
-        `Access will be revoked automatically after expiry.`
-    );
-
-    this.displayDay(this.currentDate);
-}
-
-// ✅ PAYWALL HTML (INCLUDES AMAZON LINK)
-getPaywallHTML(content, dateKey) {
-    return `
-        <div class="daily-date">${this.escapeHtml(content.title)}</div>
-
-        <div style="margin-top:2rem;padding:2rem;background:linear-gradient(135deg,var(--primary-color),#1a4d7a);color:white;border-radius:12px;text-align:center;">
-
-            <p style="font-size:1.4rem;margin-bottom:1rem;">🔒 Paid Content</p>
-
-            <p style="font-size:1rem;margin-bottom:1rem;">
-                Read online for a small fee or buy the printed book on Amazon.
-            </p>
-
-            <button class="export-btn" onclick="app.openPricingModal()" style="background:#ffd700;color:#000;font-weight:bold;width:100%;margin-bottom:1rem;">
-                💳 View Online Reading Plans
-            </button>
-
-            <a href="${AMAZON_BOOK_URL}" target="_blank"
-               style="display:block;text-decoration:none;background:#ff9900;color:#000;font-weight:bold;padding:0.75rem;border-radius:6px;">
-               📘 Buy Paperback / Hardcover on Amazon
-            </a>
-
-            <p style="margin-top:1rem;font-size:0.85rem;color:#e0e0e0;">
-                ${this.escapeHtml(this.getAccessStatusText())}
-            </p>
-
-            <p style="margin-top:0.5rem;font-size:0.8rem;color:#b0b0b0;">
-                Online access expires automatically. Printed books are permanent.
-            </p>
-        </div>
-    `;
-}
     exportDataForGitHub() {
         // Export ONLY current book format
         let jsCode = `const DAILY_CONTENT = {\n`;
