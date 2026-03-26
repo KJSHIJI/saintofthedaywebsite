@@ -122,24 +122,47 @@ header .author {
     color: var(--text-color);
 }
 
-.controls input[type="date"],
+/* ===== DATE INPUT FIXES ===== */
+
+.controls input[type="date"] {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    background: white;
+    color: var(--text-color);
+
+    /* ✅ Prevent typing glitches */
+    caret-color: transparent;
+}
+
+/* ✅ Force calendar icon & text visibility in Dark Mode */
+html.dark-mode .controls input[type="date"] {
+    background-color: #2a2a3e;
+    color: #e8eaed;
+    border-color: #555;
+    color-scheme: dark; /* ✅ fixes icon color */
+}
+
+/* ✅ Make calendar icon white */
+html.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* ✅ Light mode safety */
+input[type="date"] {
+    color-scheme: light;
+}
+
+/* Buttons */
 .controls button {
     padding: 0.75rem 1rem;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-family: 'Libre Baskerville', serif;
     font-size: 1rem;
-    background: white;
-    color: var(--text-color);
-}
-
-html.dark-mode .controls input[type="date"] {
-    background: #2a2a3e;
-    color: var(--text-color);
-    border-color: var(--border-color);
-}
-
-.controls button {
     background-color: var(--primary-color);
     color: white;
     cursor: pointer;
@@ -159,6 +182,7 @@ html.dark-mode .controls button:hover {
     color: var(--light-text);
     min-width: 150px;
 }
+
 
 /* Navigation */
 .pagination {
