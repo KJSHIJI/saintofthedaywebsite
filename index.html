@@ -174,62 +174,42 @@
         </div>
 
         <!-- Editor Modal -->
-        <div id="editor-modal" class="modal" style="display: none;">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Add/Edit Daily Entry</h2>
-                
-                <div class="form-group">
-                    <label>Date (MM-DD):</label>
-                    <input type="text" id="editor-date" placeholder="01-15" maxlength="5" />
-                </div>
+       <div id="editor-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
 
-                <div class="form-group">
-                    <label>Saint Name:</label>
-                    <input type="text" id="editor-saint" placeholder="Saint ___" />
-                </div>
+    <h2>✏️ Add / Edit Entry</h2>
 
-                <div class="form-group">
-                    <label>Prayer (3-4 lines):</label>
-                    <textarea id="editor-prayer" rows="4"></textarea>
-                </div>
+    <label>Date (MM-DD)</label>
+    <input type="text" id="editor-date" placeholder="01-31" />
 
-                <div class="form-group">
-                    <label>Scripture Reference (Book Chapter:Verse):</label>
-                    <input type="text" id="editor-scripture" placeholder="John 3:16" />
-                </div>
+    <label>Title</label>
+    <input type="text" id="editor-title" placeholder="January 31  Saint John Bosco" />
 
-                <div class="form-group">
-                    <label>Scripture Text (Exact Douay-Rheims):</label>
-                    <textarea id="editor-scripture-text" rows="4"></textarea>
-                </div>
+    <label>Story</label>
+    <textarea id="editor-story" rows="6" placeholder="Write the saint's story here..."></textarea>
 
-                <div class="form-group">
-                    <label>Meaning (1 sentence):</label>
-                    <textarea id="editor-meaning" rows="2"></textarea>
-                </div>
+    <label>Bible Verse (Reference + Text)</label>
+    <textarea id="editor-bibleVerse" rows="4"
+      placeholder="Bible verse: Matthew 19:14
+Suffer the little children..."></textarea>
 
-                <div class="form-group">
-                    <label>Story (2-3 paragraphs):</label>
-                    <textarea id="editor-story" rows="6"></textarea>
-                </div>
+    <label>Meaning (Child‑friendly explanation)</label>
+    <textarea id="editor-meaning" rows="3" placeholder="Explain the verse simply for children"></textarea>
 
-                <div class="form-group">
-                    <label>Today's Thought (1 sentence):</label>
-                    <textarea id="editor-thought" rows="2"></textarea>
-                </div>
+    <label>Prayer</label>
+    <textarea id="editor-prayer" rows="3" placeholder="Short prayer for children"></textarea>
 
-                <div class="form-group">
-                    <label>Today's Action (under 1 minute):</label>
-                    <textarea id="editor-action" rows="2"></textarea>
-                </div>
+    <label>Task of the Day</label>
+    <textarea id="editor-action" rows="2" placeholder="One simple action for today"></textarea>
 
-                <div style="display: flex; gap: 10px; margin-top: 20px;">
-                    <button id="save-entry-btn" class="export-btn">💾 Save Entry</button>
-                    <button id="cancel-edit-btn" class="export-btn" style="background-color: #e74c3c;">❌ Cancel</button>
-                </div>
-            </div>
-        </div>
+    <div class="editor-actions">
+      <button id="save-entry-btn" class="primary-btn">💾 Save</button>
+      <button id="cancel-edit-btn" class="secondary-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
 
         <footer>
             <p>&copy; 2026 SHIJI KJ. All rights reserved.</p>
