@@ -116,28 +116,23 @@ class SaintOfTheDay {
 
     setupEventListeners() {
 
-    /* ======================================================
-       DATE PICKER — CALENDAR ONLY, LOCAL TIME SAFE
-       ====================================================== */
+   // ✅ Date picker — calendar only, local date SAFE
+this.safeOn("date-input", "keydown", (e) => {
+    e.preventDefault(); // block typing
+});
 
-    // ✅ Prevent manual typing (calendar only)
-    this.safeOn("date-input", "keydown", (e) => {
-        e.preventDefault();
-    });
+this.safeOn("date-input", "change", (e) => {
+    if (!e.target.value) return;
 
-    // ✅ Handle date selection from calendar
-    this.safeOn("date-input", "change", (e) => {
-        if (!e.target.value) return;
+    // YYYY-MM-DD from calendar
+    const [year, month, day] = e.target.value.split("-").map(Number);
 
-        // value is YYYY-MM-DD
-        const [year, month, day] = e.target.value.split("-").map(Number);
+    // ✅ Set ONCE, correctly
+    this.currentDate = new Date(year, month - 1, day);
 
-        // ✅ Create LOCAL date (no timezone shift)
-        this.currentDate = new Date(year, month - 1, day);
-
-        this.displayDay(this.currentDate);
-        this.updateDateDisplay();
-    });
+    this.displayDay(this.currentDate);
+    this.updateDateDisplay(); // MUST NOT mutate date
+});
 
     /* ======================================================
        TODAY BUTTON — LOCAL DATE ONLY
@@ -336,27 +331,37 @@ class SaintOfTheDay {
         `;
     }
 
-    updateDateDisplay() {
-        const dateStr = this.currentDate.toLocaleDateString("en-US", {
-            weekday: "long",
-            month: "long",
-            day: "numeric",
-            year: "numeric"
-        });
+   updateDateDisplay() {
+    // ✅ DISPLAY ONLY — DO NOT MODIFY currentDate
 
-        const dd = document.getElementById("date-display");
-        if (dd) dd.textContent = dateStr;
+    const dateStr = this.currentDate.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+    });
 
-        const di = document.getElementById("date-input");
-        if (di) di.valueAsDate = this.currentDate;
+    const dd = document.getElementById("date-display");
+    if (dd) dd.textContent = dateStr;
+
+    const di = document.getElementById("date-input");
+    if (di) {
+        const y = this.currentDate.getFullYear();
+        const m = String(this.currentDate.getMonth() + 1).padStart(2, "0");
+        const d = String(this.currentDate.getDate()).padStart(2, "0");
+
+        // ✅ SAFE: set string value, NOT valueAsDate
+        di.value = `${y}-${m}-${d}`;
     }
+}
 
-    escapeHtml(text) {
-        if (text === null || text === undefined) return "";
-        const div = document.createElement("div");
-        div.textContent = String(text);
-        return div.innerHTML;
-    }
+escapeHtml(text) {
+    if (text === null || text === undefined) return "";
+    const div = document.createElement("div");
+    div.textContent = String(text);
+    return div.innerHTML;
+}
+
 
     // ---------- Printing / Export ----------
     printPage() {
