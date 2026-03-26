@@ -682,162 +682,201 @@ saveEntry() {
         }
     }
 
-    // ===== OWNER AUTHENTICATION & PAYWALL METHODS =====
-    checkOwnerLogin() {
-        const ownerLoggedIn = sessionStorage.getItem("ownerLoggedIn") === "true";
-        if (ownerLoggedIn) this.isOwnerLoggedIn = true;
+    // ===== OWNER AUTHENTICATION & PAYWALL METHODS (UPDATED) =====
+
+// ✅ CHANGE THIS AFTER AMAZON PUBLISHING
+const AMAZON_BOOK_URL = "https://www.amazon.in/dp/YOUR_BOOK_ASIN";
+
+checkOwnerLogin() {
+    const ownerLoggedIn = sessionStorage.getItem("ownerLoggedIn") === "true";
+    if (ownerLoggedIn) this.isOwnerLoggedIn = true;
+}
+
+checkUserAccessStatus() {
+    // Cleanup expired purchases automatically
+    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+    const now = Date.now();
+
+    const active = purchases.filter(p => {
+        const purchaseTime = parseInt(p.purchaseTime, 10);
+        const duration = parseInt(p.duration, 10);
+        return now <= (purchaseTime + duration);
+    });
+
+    if (active.length !== purchases.length) {
+        localStorage.setItem("purchases", JSON.stringify(active));
     }
+}
 
-    checkUserAccessStatus() {
-        const paidAccessTime = localStorage.getItem("paidAccessTime");
-        if (!paidAccessTime) return;
+canUserReadContent(dateKey) {
+    if (this.isOwnerLoggedIn) return true;
+    if (FREE_DATES.includes(dateKey)) return true;
+    if (this.hasUserPurchasedAccess()) return true;
+    return false;
+}
 
-        const accessTimestamp = parseInt(paidAccessTime, 10);
-        const now = Date.now();
-        if (now - accessTimestamp < PAID_ACCESS_DURATION) {
-            this.userHasPaidAccess = true;
-        } else {
-            localStorage.removeItem("paidAccessTime");
-            this.userHasPaidAccess = false;
+hasUserPurchasedAccess() {
+    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+    const now = Date.now();
+
+    return purchases.some(p => {
+        const purchaseTime = parseInt(p.purchaseTime, 10);
+        const duration = parseInt(p.duration, 10);
+        return now <= (purchaseTime + duration);
+    });
+}
+
+// ✅ SHOW ACCESS STATUS + EXPIRY CLEARLY
+getAccessStatusText() {
+    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+    const now = Date.now();
+
+    if (!purchases.length) return "";
+
+    const active = purchases
+        .map(p => ({
+            ...p,
+            expiresAt: parseInt(p.purchaseTime, 10) + parseInt(p.duration, 10)
+        }))
+        .filter(p => now <= p.expiresAt)
+        .sort((a, b) => b.expiresAt - a.expiresAt)[0];
+
+    if (!active) return "";
+
+    return `✅ Access Active (${active.type.toUpperCase()} plan) — valid until ${new Date(active.expiresAt).toLocaleString()}`;
+}
+
+updateUIBasedOnAccess() {
+    const ownerActionsDiv = document.getElementById("owner-actions");
+    const ownerLoginBtn = document.getElementById("owner-login-btn");
+    const ownerLogoutBtn = document.getElementById("owner-logout-btn");
+
+    if (this.isOwnerLoggedIn) {
+        if (ownerActionsDiv) {
+            ownerActionsDiv.style.display = "flex";
+            ownerActionsDiv.style.flexDirection = "column";
         }
+        if (ownerLoginBtn) ownerLoginBtn.style.display = "none";
+        if (ownerLogoutBtn) ownerLogoutBtn.style.display = "inline-block";
+    } else {
+        if (ownerActionsDiv) ownerActionsDiv.style.display = "none";
+        if (ownerLoginBtn) ownerLoginBtn.style.display = "inline-block";
+        if (ownerLogoutBtn) ownerLogoutBtn.style.display = "none";
     }
+}
 
-    canUserReadContent(dateKey) {
-        if (this.isOwnerLoggedIn) return true;
-        if (FREE_DATES.includes(dateKey)) return true;
-        if (this.hasUserPurchasedAccess(dateKey)) return true;
-        return false;
-    }
+openLoginModal() {
+    const m = document.getElementById("login-modal");
+    if (m) m.style.display = "block";
+    const pwd = document.getElementById("owner-password");
+    if (pwd) pwd.focus();
+}
 
-    hasUserPurchasedAccess(dateKey) {
-        const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
-        const now = Date.now();
+closeLoginModal() {
+    const m = document.getElementById("login-modal");
+    if (m) m.style.display = "none";
+    const pwd = document.getElementById("owner-password");
+    if (pwd) pwd.value = "";
+}
 
-        for (let purchase of purchases) {
-            const purchaseTime = parseInt(purchase.purchaseTime, 10);
-            const duration = parseInt(purchase.duration, 10);
-            const expiresAt = purchaseTime + duration;
-            if (now >= purchaseTime && now <= expiresAt) return true;
-        }
-        return false;
-    }
+login() {
+    const pwd = document.getElementById("owner-password");
+    const password = pwd ? pwd.value : "";
 
-    updateUIBasedOnAccess() {
-        const ownerActionsDiv = document.getElementById("owner-actions");
-        const ownerLoginBtn = document.getElementById("owner-login-btn");
-        const ownerLogoutBtn = document.getElementById("owner-logout-btn");
-
-        if (this.isOwnerLoggedIn) {
-            if (ownerActionsDiv) {
-                ownerActionsDiv.style.display = "flex";
-                ownerActionsDiv.style.flexDirection = "column";
-            }
-            if (ownerLoginBtn) ownerLoginBtn.style.display = "none";
-            if (ownerLogoutBtn) ownerLogoutBtn.style.display = "inline-block";
-        } else {
-            if (ownerActionsDiv) ownerActionsDiv.style.display = "none";
-            if (ownerLoginBtn) ownerLoginBtn.style.display = "inline-block";
-            if (ownerLogoutBtn) ownerLogoutBtn.style.display = "none";
-        }
-    }
-
-    openLoginModal() {
-        const m = document.getElementById("login-modal");
-        if (m) m.style.display = "block";
-        const pwd = document.getElementById("owner-password");
-        if (pwd) pwd.focus();
-    }
-
-    closeLoginModal() {
-        const m = document.getElementById("login-modal");
-        if (m) m.style.display = "none";
-        const pwd = document.getElementById("owner-password");
+    if (password === OWNER_PASSWORD) {
+        this.isOwnerLoggedIn = true;
+        sessionStorage.setItem("ownerLoggedIn", "true");
+        this.closeLoginModal();
+        this.updateUIBasedOnAccess();
+        alert("✅ Owner login successful!");
+        this.displayDay(this.currentDate);
+    } else {
+        alert("❌ Incorrect password.");
         if (pwd) pwd.value = "";
     }
+}
 
-    login() {
-        const pwd = document.getElementById("owner-password");
-        const password = pwd ? pwd.value : "";
-
-        if (password === OWNER_PASSWORD) {
-            this.isOwnerLoggedIn = true;
-            sessionStorage.setItem("ownerLoggedIn", "true");
-            this.closeLoginModal();
-            this.updateUIBasedOnAccess();
-            alert("✅ Owner login successful!");
-            this.displayDay(this.currentDate);
-        } else {
-            alert("❌ Incorrect password. Try again.");
-            if (pwd) pwd.value = "";
-        }
-    }
-
-    logout() {
-        if (confirm("Are you sure you want to logout?")) {
-            this.isOwnerLoggedIn = false;
-            sessionStorage.setItem("ownerLoggedIn", "false");
-            this.updateUIBasedOnAccess();
-            alert("✅ Logged out successfully.");
-            this.displayDay(this.currentDate);
-        }
-    }
-
-    openPaymentModal() {
-        const paymentInfo = localStorage.getItem("paymentInfo") || "";
-        const t = document.getElementById("payment-info");
-        if (t) t.value = paymentInfo;
-        const m = document.getElementById("payment-modal");
-        if (m) m.style.display = "block";
-    }
-
-    closePaymentModal() {
-        const m = document.getElementById("payment-modal");
-        if (m) m.style.display = "none";
-    }
-
-    savePaymentInfo() {
-        const t = document.getElementById("payment-info");
-        const paymentInfo = t ? t.value.trim() : "";
-
-        if (paymentInfo) {
-            localStorage.setItem("paymentInfo", paymentInfo);
-            alert("✅ Payment information saved!");
-        } else {
-            localStorage.removeItem("paymentInfo");
-            alert("✅ Payment information removed.");
-        }
-        this.closePaymentModal();
-    }
-
-    openPricingModal() {
-        const m = document.getElementById("pricing-modal");
-        if (m) m.style.display = "block";
-    }
-
-    closePricingModal() {
-        const m = document.getElementById("pricing-modal");
-        if (m) m.style.display = "none";
-    }
-
-    confirmPurchase(planType) {
-        const pricing = PRICING[planType];
-        if (!pricing) return;
-
-        const now = Date.now();
-        const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
-        purchases.push({
-            type: planType,
-            price: pricing.price,
-            purchaseTime: now.toString(),
-            duration: pricing.duration.toString(),
-            expiresAt: new Date(now + pricing.duration).toLocaleDateString()
-        });
-        localStorage.setItem("purchases", JSON.stringify(purchases));
-        this.closePricingModal();
-        alert(`✅ ${pricing.label} access granted!`);
+logout() {
+    if (confirm("Are you sure you want to logout?")) {
+        this.isOwnerLoggedIn = false;
+        sessionStorage.setItem("ownerLoggedIn", "false");
+        this.updateUIBasedOnAccess();
+        alert("✅ Logged out successfully.");
         this.displayDay(this.currentDate);
     }
+}
 
+// ✅ PAYMENT & PRICING
+openPricingModal() {
+    const m = document.getElementById("pricing-modal");
+    if (m) m.style.display = "block";
+}
+
+closePricingModal() {
+    const m = document.getElementById("pricing-modal");
+    if (m) m.style.display = "none";
+}
+
+// ✅ CONFIRM PURCHASE WITH AUTO EXPIRY
+confirmPurchase(planType) {
+    const pricing = PRICING[planType];
+    if (!pricing) return;
+
+    const now = Date.now();
+    const expiresAt = now + pricing.duration;
+
+    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+    purchases.push({
+        type: planType,
+        price: pricing.price,
+        purchaseTime: now.toString(),
+        duration: pricing.duration.toString()
+    });
+
+    localStorage.setItem("purchases", JSON.stringify(purchases));
+    this.closePricingModal();
+
+    alert(
+        `✅ ${pricing.label} access granted!\n\n` +
+        `Valid until: ${new Date(expiresAt).toLocaleString()}\n\n` +
+        `Access will be revoked automatically after expiry.`
+    );
+
+    this.displayDay(this.currentDate);
+}
+
+// ✅ PAYWALL HTML (INCLUDES AMAZON LINK)
+getPaywallHTML(content, dateKey) {
+    return `
+        <div class="daily-date">${this.escapeHtml(content.title)}</div>
+
+        <div style="margin-top:2rem;padding:2rem;background:linear-gradient(135deg,var(--primary-color),#1a4d7a);color:white;border-radius:12px;text-align:center;">
+
+            <p style="font-size:1.4rem;margin-bottom:1rem;">🔒 Paid Content</p>
+
+            <p style="font-size:1rem;margin-bottom:1rem;">
+                Read online for a small fee or buy the printed book on Amazon.
+            </p>
+
+            <button class="export-btn" onclick="app.openPricingModal()" style="background:#ffd700;color:#000;font-weight:bold;width:100%;margin-bottom:1rem;">
+                💳 View Online Reading Plans
+            </button>
+
+            <a href="${AMAZON_BOOK_URL}" target="_blank"
+               style="display:block;text-decoration:none;background:#ff9900;color:#000;font-weight:bold;padding:0.75rem;border-radius:6px;">
+               📘 Buy Paperback / Hardcover on Amazon
+            </a>
+
+            <p style="margin-top:1rem;font-size:0.85rem;color:#e0e0e0;">
+                ${this.escapeHtml(this.getAccessStatusText())}
+            </p>
+
+            <p style="margin-top:0.5rem;font-size:0.8rem;color:#b0b0b0;">
+                Online access expires automatically. Printed books are permanent.
+            </p>
+        </div>
+    `;
+}
     exportDataForGitHub() {
         // Export ONLY current book format
         let jsCode = `const DAILY_CONTENT = {\n`;
