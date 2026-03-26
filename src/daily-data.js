@@ -120,7 +120,24 @@ const DAILY_CONTENT = {
   meaning: "This verse teaches children that God should come first in our lives. When we trust God and choose Him above everything else, He takes care of us.",
   prayer: "Dear God, thank You for Saint Paul the Hermit, who trusted You with his whole life. Please help me remember You each day, pray with love, and trust You to take care of me. Amen.",
   action: "Spend a quiet minute today talking to God in prayer and thank Him for caring for you."
-}
+},
+"01-16": {
+  title: "January 16  Saint Marcellus I, Pope and Martyr",
+  story: "Saint Marcellus I lived in Rome during the early years of the Church. The names of his parents are not recorded, but the Church remembers him as a faithful priest who later became Pope at a very difficult time. Many Christians were afraid because the Church was being persecuted, and some people had stopped practicing their faith.\n\nAs Pope, Saint Marcellus worked hard to help people return to God. He encouraged prayer, repentance, and forgiveness, reminding everyone that God’s mercy is always available. He helped organize the Church so that Christians could support one another and grow stronger in faith. Because of his courage and leadership, Marcellus made powerful leaders angry. He suffered greatly and died because he remained faithful to Jesus.\n\nThe Church celebrates Saint Marcellus I on January 16. He became a saint because he bravely led the Church, cared for God’s people, and stayed faithful to Jesus even when it cost him his life.",
+  bibleVerse: "Bible verse: Galatians 6:9\nAnd in doing good, let us not fail; for in due time we shall reap, not failing.",
+  meaning: "This verse teaches children that doing good is always worth it, even when it is hard. God sees our efforts and blesses those who stay faithful and kind.",
+  prayer: "Dear God, thank You for Saint Marcellus, who stayed strong in faith and helped others return to You. Please help me do good each day, be patient, and trust You always. Amen.",
+  action: "Do one good thing today even if it feels difficult, and offer it to God with love."
+},
+"01-17": {
+  title: "January 17  Saint Anthony the Great",
+  story: "Saint Anthony the Great was born in Egypt many centuries ago. His parents were faithful Christians who taught him to love God and to pray. When Anthony was still young, his parents died, and he was left to care for his sister. One day, Anthony heard Jesus’ words in the church and understood that God was calling him to give his life completely to Him.\n\nAnthony chose a simple life and went to live in the desert so he could pray and listen to God without distractions. Many people came to him for advice because they saw his kindness, wisdom, and strong faith. Even though he lived simply, Anthony helped many people grow closer to God through his words and example.\n\nThe Church celebrates Saint Anthony the Great on January 17. He became a saint because he trusted God fully, lived a life of prayer, and showed that choosing God above everything else brings true joy and peace.",
+  bibleVerse: "Bible verse: Matthew 19:21\nJesus saith to him: If thou wilt be perfect, go sell what thou hast, and give to the poor, and thou shalt have treasure in heaven: and come, follow me.",
+  meaning: "This verse teaches children that following Jesus sometimes means letting go of things we do not need. When we choose God first, our hearts become rich with love and joy.",
+  prayer: "Dear God, thank You for Saint Anthony the Great, who trusted You with his whole life. Please help me love You, pray with a sincere heart, and choose what matters most. Amen.",
+  action: "Give up one small thing today (like extra screen time or a treat) and offer it to God with love."
+},
+
 };
 
 // Add placeholder entries for all days of the year
