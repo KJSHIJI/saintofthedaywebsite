@@ -2,46 +2,46 @@
 
 const DAILY_CONTENT = {
 "01-01": {
-    title: "January 1  Mary, Mother of God",
-    story: "Mary lived in the small town of Nazareth and was chosen by God to be the Mother of Jesus. Tradition tells us that Mary was born in Jerusalem to holy parents named Joachim and Anne, who prayed for many years for a child. When the angel Gabriel appeared to Mary, she humbly said yes to God’s plan, even though she did not fully understand what would happen. Because Mary is the Mother of Jesus, who is truly God, the Church honors her as the Mother of God. On January 1, her feast day, we remember Mary’s loving faith and trust in God. After Jesus was born, Mary cared for Him gently and listened quietly to all that happened. She kept God’s words in her heart and trusted Him each day. Mary teaches us that holiness begins with saying yes to God and trusting Him with our lives.",
-    bibleVerse: "Bible verse: Luke 2:19\nBut Mary kept all these words, pondering them in her heart.",
-    prayer: "Dear Mother Mary, you trusted God with your whole heart and gave the world Jesus. Please pray for us as we begin this new year. Help us trust God, love Jesus, and follow Him every day.",
-    action: "Say a Hail Mary today and ask Mother Mary to help you obey God and be kind to others this year."
-}
-,
-     "01-02": {
-        date: "January 2",
-        saint: "Saint Basil the Great and Saint Gregory of Nazianzus",
-        prayer: "Holy Basil and Gregory, teachers of wisdom and holiness, pray for us that we may grow in learning and kindness. Help us to be brave in speaking God's truth.",
-        scripture: "2 Timothy 2:15",
-        scriptureText: "Carefully study to present thyself to God approved, a workman that needeth not to be ashamed, rightly handling the word of truth.",
-        meaning: "We become wise and strong when we study God's truth and share it with love.",
-        story: "Long ago in a land called Cappadocia, two friends grew up together. Their names were Basil and Gregory. Both came from families that loved God deeply, and both were brilliant students who read every book they could find. When they grew older, they became priests and great teachers of the Church. Basil founded monasteries where monks lived together, praying and working and studying Scripture. Gregory became known as 'the Theologian' because he taught so many people about God's nature and God's love. These two friends showed that it is beautiful and holy to use our minds to understand God better. They wrote letters to each other that are still read today. But more than being smart, Basil and Gregory were kind. Basil helped poor people and started the first hospital. Gregory stood up for truth even when it was dangerous. They taught that real wisdom is not just knowing many things—it is knowing God and living with love. The story of their friendship shows us that the smartest thing we can do is make friends who help us grow closer to God.",
-        thought: "The best friendships help us grow not just smarter, but holier.",
-        action: "Spend time today learning something new about God, then tell a friend what you learned."
-    },
-"08-21": {
-        date: "August 21",
-        saint: "Saint Pius X, Pope",
-        prayer: "Saint Pius X, humble shepherd of God’s people, pray for us. Teach us to love Jesus with a simple and trusting heart. Help us grow closer to Him, especially through the Holy Eucharist.",
-        scripture: "John 6:35",
-        scriptureText: "Jesus said to them: I am the bread of life. He that cometh to me shall not hunger; and he that believeth in me shall never thirst.",
-        meaning: "Saint Pius X reminds us that Jesus wants to be close to us and invites even children to receive Him with love in the Holy Eucharist.",
-        story: "Long ago in a small village in Italy, a poor boy named Giuseppe Sarto grew up helping his family and serving at church. His parents were not rich, but they taught him to love God above all things. Giuseppe worked very hard in school and became a priest, then a bishop, and later the Pope. When he became Pope Pius X, he did not live in luxury or pride. He stayed simple, kind, and close to ordinary people. He loved children very much and believed they should not be kept away from Jesus. At that time, many people thought children should wait many years before receiving Holy Communion. Pope Pius X changed this because he knew Jesus wants children to come to Him early, with pure hearts and simple faith. Because of him, children today can receive Jesus in the Eucharist at a young age. Pope Pius X also protected the Church by teaching the truth with courage. His life shows us that holiness is not about being powerful or famous, but about loving Jesus with humility and trust.",
-        thought: "Jesus loves simple hearts and wants to be close to us, especially in the Eucharist.",
-        action: "Spend a quiet moment today thanking Jesus for His presence in the Holy Eucharist."
-    },
-    "12-25": {
-        date: "December 25",
-        saint: "The Nativity of Our Lord Jesus Christ",
-        prayer: "Thank You, Jesus, for coming to save us. Help us to remember that in the simplest places, You are present. Give us hearts full of wonder and love for this great gift.",
-        scripture: "Luke 2:1-7",
-        scriptureText: "And it came to pass that in those days there went out a decree from Caesar Augustus, that the whole world should be enrolled. And all went to be enrolled, every one in his own city. And Joseph also went up from Galilee, out of the city of Nazareth into Judea, to the city of David, which is called Bethlehem: because he was of the house and family of David. That he might be enrolled with Mary his espoused wife, who was with child. And it came to pass, that when they were there, her days were accomplished, that she should be delivered. And she brought forth her firstborn son, and wrapped him up in swaddling clothes, and laid him in a manger; because there was no room for them in the inn.",
-        meaning: "Jesus, the King of all creation, chose to be born in poverty and simplicity to show us that God's love reaches everyone.",
-        story: "On a cold winter's night in a small town called Bethlehem, something extraordinary happened. Mary and Joseph had traveled far from home, tired and seeking shelter. When they arrived, every inn was full—there was no room anywhere. So they found their way to a humble stable, where animals were kept for warmth. It was in this simple place, surrounded by hay and the gentle sounds of cattle, that Jesus was born. Mary wrapped her newborn Son in the cloth she had brought, and laid Him in a manger—the place where animals ate their food. This was the beginning of the great love story between God and mankind. The King of Heaven chose poverty, not because He had to, but to show us that He loves the poor and humble. He wanted everyone to know that God does not come in golden robes or marble palaces, but in humility and gentleness. Every child who feels lonely, every person who feels forgotten, can look at the baby Jesus in that stable and know: God sees you, God loves you, God came for you.",
-        thought: "God's greatest gift came not in a palace, but in a stable, to show us He loves everyone.",
-        action: "Give a small gift to someone today who feels left out or lonely, just as Jesus was born in a humble stable."
-    }
+  title: "January 1  Mary, Mother of God",
+  story: "Today is the feast of Mary, Mother of God—celebrated on January 1, the octave day of Christmas. Mary is honored with this title because her Son, Jesus, is truly God and truly man. Mary lived in Nazareth, and Christian tradition names her holy parents as Saints Joachim and Anne. Tradition also connects Mary’s early life with Jerusalem. But the most important true fact is this: Mary said a brave and loving YES to God, and she cared for Jesus with a mother’s tender love.\n\nOn the night Jesus was born in Bethlehem, shepherds came in a hurry. They told Mary and Joseph about angels and a song of peace. Mary did not interrupt or boast. She listened quietly, like someone holding a treasure. She kept those words safe inside her heart and thought about them again and again.\n\nThat is one reason children will love Mary: she is gentle, strong, and close to Jesus. And that is why the Church begins the new year with her—so every family can start again with peace. When you feel confused, Mary teaches you to pray. When you feel afraid, Mary teaches you to trust. And when you want to come closer to Jesus, Mary always points you to Him.",
+  bibleVerse: "Bible verse: Luke 2:19\nBut Mary kept all these words, pondering them in her heart.",
+  meaning: "This verse teaches us that Mary listened carefully and trusted God, even when she did not understand everything. Children can learn from Mary to keep good thoughts in their hearts and trust God quietly.",
+  prayer: "Dear Mother Mary, Mother of God, thank you for saying yes to God and bringing Jesus to the world. Please pray for me and my family today. Help me trust God, love Jesus, and keep good thoughts in my heart. Amen.",
+  action: "Do one quiet act of love today: say a Hail Mary and help your mother (or the person who cares for you) with one small thing without being asked."
+},
+"01-02": {
+  title: "January 2  Saints Basil the Great and Gregory of Nazianzus",
+  story: "Saint Basil and Saint Gregory were born in the land of Cappadocia, in what is now part of Turkey. Basil was born into a large Christian family—his parents, Basil the Elder and Emmelia, taught their children to love God deeply. Several members of Basil’s family became saints, including his sister Saint Macrina. Gregory was born to faithful parents named Gregory and Nonna, who prayed and guided him with love.\n\nAs young men, Basil and Gregory became very close friends while studying together. They encouraged each other to pray, to learn, and to live holy lives. Basil later became a bishop and cared for the poor, the sick, and the hungry. He even helped create places where people could receive food and medical care. Gregory also became a bishop and used his gentle words to explain the truth about God when the Church was facing confusion.\n\nThe Church celebrates Saints Basil and Gregory on January 2 because of their great love for God, their friendship, and their courage in teaching the truth. Their lives show children that learning, kindness, and friendship can all be paths to holiness when they are offered to God.",
+  bibleVerse: "Bible verse: Proverbs 27:17\nIron sharpeneth iron, so a man sharpeneth the countenance of his friend.",
+  meaning: "This verse means that good friends help each other become better. When friends pray together and choose what is right, they help each other grow closer to God.",
+  prayer: "Dear God, thank You for Saints Basil and Gregory and for the gift of good friends. Help me learn what is right, be kind to others, and choose friends who help me love You more. Amen.",
+  action: "Do one kind thing today for a friend or sibling, encouraging them just as Saints Basil and Gregory encouraged each other."
+},
+"01-03": {
+  title: "January 3  Saint Genevieve of Paris",
+  story: "Saint Genevieve was born in the village of Nanterre, near Paris in France. Her parents were named Severus and Gerontia, and they raised her to love God and to pray from a young age. When Genevieve was still a child, a holy bishop named Saint Germanus visited her village and blessed her, telling her that God had a special plan for her life. From that day on, Genevieve chose to belong completely to God.\n\nAs she grew older, Genevieve lived a simple life of prayer and kindness. She cared deeply for poor people and often gave food to those who were hungry. When enemies threatened the city of Paris, many people were afraid and wanted to run away. Genevieve courageously asked them to trust God instead. She prayed day and night, and the city was saved from harm. Because of her faith and bravery, the people of Paris loved her and remembered her as a protector.\n\nThe Church celebrates Saint Genevieve on January 3. She is honored as a saint because she trusted God completely, helped others in times of fear, and showed that prayer can bring peace even in difficult moments.",
+  bibleVerse: "Bible verse: Psalm 56:4\nIn God I have put my trust; I will not fear what flesh can do against me.",
+  meaning: "This verse reminds children that when we trust God, we do not need to be afraid. God stays with us and protects us even in difficult times.",
+  prayer: "Dear God, thank You for Saint Genevieve, who trusted You even when others were afraid. Please help me to be brave, to pray when things are hard, and to care for people who need help. Amen.",
+  action: "Say a short prayer today for someone who feels afraid, and do one kind thing to help them feel safe."
+},
+"01-04": {
+  title: "January 4  Saint Elizabeth Ann Seton",
+  story: "Saint Elizabeth Ann Seton was born in New York City in the United States. Her parents were Richard and Catherine Bayley. Elizabeth lost her mother when she was very young, which made her learn to trust God even in sadness. As she grew up, Elizabeth married and had children, but later her husband died, leaving her with great responsibility and sorrow.\n\nDuring this difficult time, Elizabeth learned more about the Catholic faith and chose to become Catholic, even though this decision was not easy and many people did not understand her choice. She trusted God and dedicated her life to caring for children and teaching them about Jesus. Elizabeth became the founder of the first Catholic school for children in America and later started a religious community to continue this work.\n\nThe Church celebrates Saint Elizabeth Ann Seton on January 4 because of her faith, courage, and love for children. She became a saint because she trusted God through loss, helped educate young people, and showed that love and faith can grow even during hard times.",
+  bibleVerse: "Bible verse: Proverbs 3:5\nTrust in the Lord with all thy heart, and lean not upon thy own prudence.",
+  meaning: "This verse teaches us to trust God with our whole heart instead of worrying too much. God knows what is best for us, even when life feels hard.",
+  prayer: "Dear God, thank You for Saint Elizabeth Ann Seton, who trusted You even when life was hard. Please help me trust You every day, learn with joy, and show kindness to others. Amen.",
+  action: "Thank a teacher or parent today and try your best in one lesson or task, offering your work to God."
+},
+"01-05": {
+  title: "January 5  Saint John Neumann",
+  story: "Saint John Neumann was born in a small village called Prachatice, in what is now the Czech Republic. His parents were named Philip and Agnes Neumann, and they raised him to love learning and prayer. From a young age, John wanted to become a priest and help people grow closer to God.\n\nAs an adult, John traveled far to the United States to serve as a priest. He walked long distances to visit families, taught children their prayers, and cared especially for poor and immigrant families. Later, he became a bishop and worked hard to build Catholic schools so children could learn about Jesus. The Church celebrates Saint John Neumann on January 5 because of his love for children, his dedication to education, and his faithful service to God.",
+  bibleVerse: "Bible verse: Matthew 19:14\nSuffer the little children, and forbid them not to come to me: for the kingdom of heaven is for such.",
+  meaning: "Jesus loves children very much and wants them to come close to Him. This verse teaches us that children are important to God and welcome in His family.",
+  prayer: "Dear God, thank You for Saint John Neumann, who loved children and helped them learn about You. Please help me love learning, be kind to others, and serve You with a joyful heart. Amen.",
+  action: "Say one prayer today for your teachers and try your best in one lesson or task as a gift to God."
+},
+
 };
 
 // Add placeholder entries for all days of the year
