@@ -137,6 +137,38 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Anthony the Great, who trusted You with his whole life. Please help me love You, pray with a sincere heart, and choose what matters most. Amen.",
   action: "Give up one small thing today (like extra screen time or a treat) and offer it to God with love."
 },
+"01-18": {
+  title: "January 18  Saint Margaret of Hungary",
+  story: "Saint Margaret of Hungary was born in Hungary to King Béla IV and Queen Maria Laskarina. Her parents promised God that they would dedicate their child to Him if their country was saved from great danger. When Margaret was still very young, her parents kept their promise and offered her life to God.\n\nMargaret grew up in a convent, where she learned to pray, help others, and live simply. Even though she was a princess, she chose a humble life and served everyone with kindness. She helped the sick, comforted the poor, and spent much time praying for peace in her country. Margaret was known for her gentle heart and joyful obedience.\n\nThe Church celebrates Saint Margaret of Hungary on January 18. She became a saint because she freely chose God, lived humbly, and showed that loving service and prayer can bring peace to many people.",
+  bibleVerse: "Bible verse: Psalm 100:2\nServe ye the Lord with gladness.",
+  meaning: "This verse teaches children that serving God should be done with joy. When we help others happily, we are also serving God.",
+  prayer: "Dear God, thank You for Saint Margaret of Hungary, who served You with joy and love. Please help me obey gladly, help others, and love You every day. Amen.",
+  action: "Do one helpful task today with a happy heart and offer it to God."
+},
+"01-19": {
+  title: "January 19  Saint Henry of Uppsala",
+  story: "Saint Henry was born in England and later became a priest and bishop because of his deep love for God. He felt called to travel far from his home to share the Christian faith with others. Henry went to the land of Finland, where many people had not yet heard about Jesus.\n\nLife was difficult in that land, but Saint Henry patiently taught, prayed, and helped the people learn about God’s love. He cared for the poor, encouraged peace, and guided others with kindness. Some people became angry because Henry spoke about Jesus and tried to lead them toward what was right. Even then, Henry did not respond with anger. He remained faithful and brave until the end of his life.\n\nThe Church celebrates Saint Henry of Uppsala on January 19. He became a saint because he shared the faith with courage, loved the people he served, and stayed faithful to Jesus even when it was dangerous.",
+  bibleVerse: "Bible verse: Matthew 28:19\nGoing therefore, teach ye all nations; baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.",
+  meaning: "This verse teaches children that Jesus wants His love to be shared with everyone. We can share our faith by being kind, loving, and helpful to others.",
+  prayer: "Dear Jesus, thank You for Saint Henry of Uppsala, who shared Your love with courage. Please help me be kind, speak gently about You, and follow You every day. Amen.",
+  action: "Show God’s love today by being kind to someone new or by saying a short prayer for people in other countries."
+},
+"01-20": {
+  title: "January 20  Saint Sebastian",
+  story: "Saint Sebastian lived in Rome during a time when it was dangerous to be a Christian. He became a soldier in the Roman army, but his heart belonged to Jesus. Sebastian quietly helped Christians who were in prison and encouraged them to stay strong in their faith.\n\nWhen the emperor discovered that Sebastian was a Christian, he ordered that Sebastian be punished. Roman soldiers tied him and shot him with arrows. Sebastian did not die, and Christians cared for him until he recovered. Later, Sebastian bravely returned to speak the truth about Jesus and to defend Christians who were suffering. Because he refused to give up his faith, the emperor ordered that Sebastian be beaten with clubs, and he gave his life for Jesus.\n\nThe Church celebrates Saint Sebastian on January 20. He became a saint because he courageously followed Jesus, helped others stay faithful, and chose love and faith even when it cost him his life.",
+  bibleVerse: "Bible verse: Psalm 27:1\nThe Lord is my light and my salvation, whom shall I fear?",
+  meaning: "This verse teaches children that God gives us courage when we feel afraid. When God is with us, we do not need to fear anything.",
+  prayer: "Dear God, thank You for Saint Sebastian, who trusted You and stayed faithful to Jesus. Please help me be brave, choose what is right, and trust You when I feel afraid. Amen.",
+  action: "When you feel scared today, say a short prayer and remember that God is always with you."
+},
+"01-21": {
+  title: "January 21  Saint Agnes of Rome",
+  story: "Saint Agnes lived in Rome and loved Jesus from a very young age. She decided to belong completely to God and promised to love Him above everything else. Many people admired her courage and faith, even though she was still very young.\n\nWhen Agnes refused to give up her faith in Jesus, she was punished because she would not stop believing in Him. Saint Agnes remained calm and prayerful, trusting God with her whole heart. According to Church tradition, Agnes was killed with a sword because she chose to stay faithful to Jesus.\n\nThe Church celebrates Saint Agnes on January 21. She became a saint because she loved Jesus more than anything else and bravely gave her life rather than deny her faith.",
+  bibleVerse: "Bible verse: Matthew 5:8\nBlessed are the clean of heart: for they shall see God.",
+  meaning: "This verse teaches children that having a pure and loving heart helps us stay close to God. When we choose goodness and honesty, God is happy with us.",
+  prayer: "Dear God, thank You for Saint Agnes, who loved You with her whole heart. Please help me choose what is right, stay close to You, and be brave in my faith. Amen.",
+  action: "Choose one good thought or action today and offer it to God with love."
+},
 
 };
 
