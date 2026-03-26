@@ -169,7 +169,78 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Agnes, who loved You with her whole heart. Please help me choose what is right, stay close to You, and be brave in my faith. Amen.",
   action: "Choose one good thought or action today and offer it to God with love."
 },
-
+"01-22": {
+  title: "January 22  Saint Vincent of Saragossa",
+  story: "Saint Vincent lived in Spain and served the Church as a deacon. He helped his bishop by preaching, caring for the poor, and encouraging Christians to stay faithful to Jesus. Vincent loved God deeply and spoke bravely about his faith.\n\nWhen Christians were being persecuted, Vincent was arrested because he refused to give up his faith. According to Church tradition, Vincent was hurt with iron hooks and placed on a hot gridiron. Through everything, Vincent remained peaceful and trusted God completely. He never stopped loving Jesus and encouraging others to be faithful.\n\nThe Church celebrates Saint Vincent of Saragossa on January 22. He became a saint because he stayed strong in faith, trusted God through suffering, and showed that love for Jesus is greater than fear.",
+  bibleVerse: "Bible verse: Romans 8:18\nFor I reckon that the sufferings of this time are not worthy to be compared with the glory to come.",
+  meaning: "This verse teaches children that hard moments do not last forever. God promises joy and peace to those who trust Him and stay faithful.",
+  prayer: "Dear God, thank You for Saint Vincent of Saragossa, who trusted You in difficult times. Please help me be brave, stay faithful, and trust You when things are hard. Amen.",
+  action: "When something is difficult today, say a short prayer and remember that God is always with you."
+},
+"01-23": {
+  title: "January 23  Saint Marianne Cope",
+  story: "Saint Marianne Cope was born in Germany and later moved with her family to the United States. From a young age, she wanted to help people who were sick and suffering. She became a religious sister and worked as a nurse, caring for those who needed love and attention.\n\nSaint Marianne heard about very sick people living far away in Hawaii who were often avoided because of their illness. Even though many were afraid to go there, Marianne trusted God and volunteered to help. She cared for the sick with kindness, touched them without fear, and treated them with respect and love. She spent her life serving others and never turned anyone away.\n\nThe Church celebrates Saint Marianne Cope on January 23. She became a saint because of her great love, courage, and kindness. Her life teaches children that caring for others and showing love is one of the most beautiful ways to follow Jesus.",
+  bibleVerse: "Bible verse: Matthew 25:36\nI was sick, and you visited me.",
+  meaning: "This verse teaches children that when we care for people who are sick or lonely, we are showing love to Jesus Himself.",
+  prayer: "Dear Jesus, thank You for Saint Marianne Cope, who cared for the sick with love. Please help me be kind, gentle, and ready to help people who need care. Amen.",
+  action: "Do one kind act today for someone who is sick, lonely, or needs help, and offer it to Jesus."
+},
+"01-24": {
+  title: "January 24  Saint Francis de Sales",
+  story: "Saint Francis de Sales was born in France and grew up in a loving family that valued learning and faith. From a young age, Francis loved God and wanted to serve Him, even though his family hoped he would become a lawyer. With patience and prayer, Francis followed God’s call and became a priest and later a bishop.\n\nSaint Francis lived during a time when many people had left the Catholic Church. Instead of arguing or being harsh, Francis taught with kindness, patience, and gentle words. He wrote letters and simple teachings to help people understand God’s love. Many people returned to the faith because Francis spoke with love and respect.\n\nThe Church celebrates Saint Francis de Sales on January 24. He became a saint because he showed that gentleness, patience, and love can bring people closer to God. His life teaches children that being kind and calm is a powerful way to follow Jesus.",
+  bibleVerse: "Bible verse: Proverbs 15:1\nA mild answer breaketh wrath: but a harsh word stirreth up anger.",
+  meaning: "This verse teaches children that kind and gentle words can calm difficult situations. Speaking with love helps us act like Jesus.",
+  prayer: "Dear God, thank You for Saint Francis de Sales, who taught others with kindness and patience. Please help me speak gently, be patient with others, and show love every day. Amen.",
+  action: "Use gentle words today, especially when you feel upset, and try to make someone feel peaceful."
+},
+"01-25": {
+  title: "January 25  The Conversion of Saint Paul",
+  story: "Saint Paul was born in the city of Tarsus and was known as Saul when he was young. He was very educated and strongly believed he was doing the right thing, but he did not understand Jesus at first. Saul was unkind to Christians and tried to stop them from following Jesus.\n\nOne day, while Saul was traveling to the city of Damascus, a bright light from heaven suddenly surrounded him. Saul fell to the ground and heard Jesus speak to him, asking why he was hurting Him. Saul realized that he had been wrong. He became blind for a short time and needed help from others. After this, Saul changed completely. He was baptized, began to follow Jesus, and became known as Paul.\n\nThe Church celebrates the Conversion of Saint Paul on January 25. Paul became a great saint because he changed his heart, followed Jesus with love, and spent his life teaching others about God. His story teaches children that God can help anyone change and become good.",
+  bibleVerse: "Bible verse: Acts 9:15\nThis man is to me a vessel of election, to carry my name before the Gentiles, and kings, and the children of Israel.",
+  meaning: "This verse teaches children that God can choose anyone for a good purpose. Even if we make mistakes, God can help us change and do great things.",
+  prayer: "Dear Jesus, thank You for Saint Paul and for helping him change his heart. Please help me listen to You, say sorry when I am wrong, and choose to do what is right. Amen.",
+  action: "If you made a mistake, say sorry today and try again with a kind and loving heart."
+},
+"01-26": {
+  title: "January 26  Saints Timothy and Titus",
+  story: "Saints Timothy and Titus were close friends and helpers of Saint Paul the Apostle. They learned to love Jesus by listening carefully to Paul’s teaching and watching how he lived his faith. Timothy helped care for Christians in the city of Ephesus, while Titus guided the Church on the island of Crete.\n\nBoth Timothy and Titus worked hard to teach others about Jesus, encourage believers, and help communities live in peace and love. They were young leaders, but they trusted God and did not give up, even when their work was difficult. Saint Paul wrote letters to them to guide and encourage them, reminding them to be brave, kind, and faithful.\n\nThe Church celebrates Saints Timothy and Titus on January 26. They became saints because they faithfully served God, helped the Church grow, and showed that learning from good teachers and helping others are beautiful ways to follow Jesus.",
+  bibleVerse: "Bible verse: 1 Timothy 4:12\nLet no man despise thy youth; but be thou an example of the faithful, in word, in conversation, in charity, in faith, in chastity.",
+  meaning: "This verse teaches children that they can do good and follow Jesus even when they are young. God loves it when children set a good example through kindness and faith.",
+  prayer: "Dear God, thank You for Saints Timothy and Titus, who served You faithfully. Please help me listen to good teachers, grow in faith, and be kind and helpful to others. Amen.",
+  action: "Be a good example today by showing kindness, obedience, or helping someone without being asked."
+},
+"01-27": {
+  title: "January 27  Saint Angela Merici",
+  story: "Saint Angela Merici was born in Italy and loved God from a very young age. She cared deeply for children, especially girls who did not have the chance to learn or grow safely. Angela believed that education and love could help children live good and holy lives.\n\nAs she grew older, Angela gathered other women who wanted to help children learn about God and live with kindness. Together, they began teaching, guiding, and protecting young girls. Angela trusted God completely and taught others to live with patience, prayer, and courage. She did not seek praise but quietly served wherever help was needed.\n\nThe Church celebrates Saint Angela Merici on January 27. She became a saint because of her great love for children, her trust in God, and her dedication to teaching and caring for others.",
+  bibleVerse: "Bible verse: Proverbs 22:6\nTrain up a child in the way he should go: and when he is old, he will not depart from it.",
+  meaning: "This verse teaches children that learning good values when we are young helps us grow into kind and faithful adults. God is happy when children are taught with love and care.",
+  prayer: "Dear God, thank You for Saint Angela Merici, who loved and taught children with care. Please help me learn good things, grow in kindness, and trust You every day. Amen.",
+  action: "Listen carefully to your teacher or parent today and try your best to learn and help others."
+},
+"01-28": {
+  title: "January 28  Saint Thomas Aquinas",
+  story: "Saint Thomas Aquinas was born in Italy into a noble family. From a young age, Thomas loved learning and wanted to understand God better. Even though his family hoped he would become rich and powerful, Thomas chose to serve God and became a priest.\n\nThomas studied very hard and used his intelligence to explain the Catholic faith clearly. He wrote many books to help people understand God, faith, and truth. Even though he was very smart, Thomas was humble and prayed often. He believed that all wisdom comes from God and that learning should lead us to love God more.\n\nThe Church celebrates Saint Thomas Aquinas on January 28. He became a saint because he used his great intelligence to serve God, taught the faith with clarity and humility, and showed that loving God with our mind is also a beautiful way to follow Jesus.",
+  bibleVerse: "Bible verse: Proverbs 2:6\nFor the Lord giveth wisdom: and out of his mouth cometh knowledge and understanding.",
+  meaning: "This verse teaches children that God is the source of all wisdom. When we learn and ask questions with a good heart, God helps us understand what is right.",
+  prayer: "Dear God, thank You for Saint Thomas Aquinas, who loved learning and used it to serve You. Please help me enjoy learning, ask good questions, and use my knowledge to do good. Amen.",
+  action: "Do your schoolwork or learning today with care and offer it to God as a way of loving Him."
+},
+"01-29": {
+  title: "January 29  Saint Gildas the Wise",
+  story: "Saint Gildas lived many years ago in the land of Britain. From a young age, he loved learning, prayer, and God’s truth. Gildas became a monk and teacher because he wanted to help people live good and holy lives.\n\nSaint Gildas traveled to different places, teaching others about Jesus and reminding them to choose kindness, honesty, and peace. He was called “the Wise” because he spoke truth gently and helped people understand right and wrong. Gildas believed that loving God also meant helping others grow better each day.\n\nThe Church celebrates Saint Gildas on January 29. He became a saint because he loved God’s truth, taught others with wisdom, and used his knowledge to guide people toward goodness.",
+  bibleVerse: "Bible verse: Proverbs 9:10\nThe fear of the Lord is the beginning of wisdom.",
+  meaning: "This verse teaches children that true wisdom begins with loving and respecting God. When we listen to God and choose what is right, we grow wiser.",
+  prayer: "Dear God, thank You for Saint Gildas the Wise, who loved truth and helped others learn. Please help me listen to You, grow in wisdom, and choose what is good. Amen.",
+  action: "Before making a choice today, pause and ask God to help you choose what is right."
+},
+"01-30": {
+  title: "January 30  Saint Martina of Rome",
+  story: "Saint Martina lived in Rome during the early days of the Church. She loved Jesus deeply and chose to dedicate her life to Him. Martina was known for her strong faith and her courage, even when it was dangerous to be a Christian.\n\nWhen Martina refused to worship false gods, she was arrested because she would not give up her faith in Jesus. Saint Martina remained calm and prayerful, trusting God with her whole heart. According to Church tradition, Martina was killed with a sword because she chose to stay faithful to Jesus.\n\nThe Church celebrates Saint Martina on January 30. She became a saint because of her brave faith, her love for Jesus, and her willingness to give her life rather than deny Him.",
+  bibleVerse: "Bible verse: Romans 8:38\nFor I am sure that neither death, nor life, nor angels, nor principalities, nor powers, shall be able to separate us from the love of God.",
+  meaning: "This verse teaches children that God’s love never leaves us. Nothing can separate us from God when we trust Him and stay close to Him.",
+  prayer: "Dear God, thank You for Saint Martina, who trusted You completely. Please help me love You, stay faithful, and be brave when it is hard to do what is right. Amen.",
+  action: "When something feels difficult today, say a short prayer and remember that God is always with you."
+},
 };
 
 // Add placeholder entries for all days of the year
