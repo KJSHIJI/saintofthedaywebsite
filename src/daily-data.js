@@ -249,6 +249,14 @@ const DAILY_CONTENT = {
   prayer: "Dear Jesus, thank You for Saint John Bosco, who loved and cared for children. Please help me be joyful, kind, and loving to everyone, especially those who need help. Amen.",
   action: "Show kindness today by helping a younger child or encouraging a friend with loving words."
 },
+"02-01": {
+  title: "February 1  Saint Brigid of Kildare",
+  story: "Saint Brigid lived in Ireland and loved God from a very young age. She was known for her great kindness and generosity, especially toward the poor and those in need. Brigid often shared food, clothing, and help with anyone who asked, trusting that God would provide for everyone.\n\nAs she grew older, Saint Brigid dedicated her life to God and helped establish a community where prayer, learning, and care for the poor were very important. Many people admired her gentle heart and her desire to serve others quietly. She taught that loving God also means loving people through simple acts of kindness.\n\nThe Church celebrates Saint Brigid on February 1. She became a saint because of her deep faith, her generosity, and her loving care for everyone she met.",
+  bibleVerse: "Matthew 25:35\nFor I was hungry, and you gave me to eat; I was thirsty, and you gave me to drink.",
+  meaning: "This verse teaches children that when we help others who are in need, we are serving Jesus Himself. God is happy when we share and care for others.",
+  prayer: "Dear God, thank You for Saint Brigid, who showed love through kindness and generosity. Please help me share what I have and care for people who need help. Amen.",
+  action: "Do one kind act today, such as sharing food, helping at home, or being kind to someone who feels left out."
+},
 };
 
 // Add placeholder entries for all days of the year
