@@ -115,39 +115,59 @@ class SaintOfTheDay {
     }
 
     setupEventListeners() {
-        // Date input
-        this.safeOn("date-input", "change", (e) => {
-            this.currentDate = new Date(e.target.value + "T00:00:00");
-            this.displayDay(this.currentDate);
-            this.updateDateDisplay();
-        });
+       // ✅ Date input (LOCAL TIME SAFE – NO TIMEZONE SHIFT)
+this.safeOn("date-input", "change", (e) => {
+    if (!e.target.value) return;
 
-        // Today
-        this.safeOn("today-btn", "click", () => {
-            this.currentDate = new Date();
-            this.displayDay(this.currentDate);
-            this.updateDateDisplay();
-        });
+    // e.target.value is YYYY-MM-DD
+    const [year, month, day] = e.target.value.split("-").map(Number);
 
-        // Random Day (FIXED)
-        this.safeOn("randomDayBtn", "click", () => {
-            // Ensure placeholders exist (if you use generatePlaceholders in daily-data.js)
-            if (typeof generatePlaceholders === "function") {
-                generatePlaceholders();
-            }
+    // ✅ Create date in LOCAL time
+    this.currentDate = new Date(year, month - 1, day);
 
-            const keys = Object.keys(DAILY_CONTENT || {});
-            if (!keys.length) {
-                console.error("DAILY_CONTENT is empty");
-                return;
-            }
+    this.displayDay(this.currentDate);
+    this.updateDateDisplay();
+});
 
-            const randomKey = keys[Math.floor(Math.random() * keys.length)];
-            this.currentDate = this.parseDate(randomKey);
+// ✅ Today button (SAFE)
+this.safeOn("today-btn", "click", () => {
+    const now = new Date();
 
-            this.displayDay(this.currentDate);
-            this.updateDateDisplay();
-        });
+    // ✅ Strip time, keep local date only
+    this.currentDate = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate()
+    );
+
+    this.displayDay(this.currentDate);
+    this.updateDateDisplay();
+});
+
+// ✅ Random Day (ALWAYS CHANGES DATE – SAFE)
+this.safeOn("randomDayBtn", "click", () => {
+    const keys = Object.keys(DAILY_CONTENT || {});
+    if (!keys.length) {
+        console.error("DAILY_CONTENT is empty");
+        return;
+    }
+
+    const currentKey = this.getDateKey(this.currentDate);
+
+    // Remove current date from random pool (if possible)
+    const availableKeys = keys.length > 1
+        ? keys.filter(k => k !== currentKey)
+        : keys;
+
+    const randomKey =
+        availableKeys[Math.floor(Math.random() * availableKeys.length)];
+
+    // ✅ parseDate("MM-DD") already creates LOCAL date
+    this.currentDate = this.parseDate(randomKey);
+
+    this.displayDay(this.currentDate);
+    this.updateDateDisplay();
+});
 
         // Prev/Next
         this.safeOn("prev-btn", "click", () => {
