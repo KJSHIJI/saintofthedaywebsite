@@ -81,6 +81,30 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Gregory of Nyssa and his holy family. Please help me keep my heart clean, be kind to others, and grow closer to You each day. Amen.",
   action: "Try to keep your heart kind today by speaking gently and choosing one good thought or action."
 },
+"01-11": {
+  title: "January 11  Saint Hyginus, Pope and Martyr",
+  story: "Saint Hyginus lived many years ago and was born in Athens, a city known for learning. The Church does not record the names of his parents, but it remembers Hyginus as a man who loved truth and faith. He later traveled to Rome and became Pope during a difficult time for the early Church.\n\nAs Pope, Saint Hyginus helped protect the Church from false teachings and guided Christians to remain faithful to Jesus. Many people at that time were afraid because Christians were often treated badly. Hyginus encouraged them to stay strong, pray together, and trust God. He cared deeply for the Church and served bravely, even though it was dangerous.\n\nThe Church celebrates Saint Hyginus on January 11. He became a saint because he courageously led the Church, defended the true faith, and remained faithful to Jesus even when it cost him his life.",
+  bibleVerse: "Bible verse: Matthew 10:32\nEvery one therefore that shall confess me before men, I will also confess him before my Father who is in heaven.",
+  meaning: "This verse teaches children that being faithful to Jesus is very important. God is happy when we choose Him and are not afraid to follow what is right.",
+  prayer: "Dear God, thank You for Saint Hyginus, who stayed faithful even when it was hard. Please help me love Jesus, choose what is right, and trust You every day. Amen.",
+  action: "Do one brave thing today for Jesus, such as saying a prayer in public or choosing kindness when it is not easy."
+},
+"01-12": {
+  title: "January 12  Saint Marguerite Bourgeoys",
+  story: "Saint Marguerite Bourgeoys was born in Troyes, France. Her parents were named Abraham Bourgeoys and Guillemette Garnier, and they raised their children in the Catholic faith. Marguerite loved God from a young age and wanted to serve Him by helping others, especially children.\n\nAs a young woman, Marguerite felt called to teach children about God. She traveled far across the ocean to a new land called Canada. Life there was difficult, with cold weather and few comforts, but Marguerite did not give up. She opened schools so girls could learn, pray, and grow in faith. She believed that learning was a gift from God and that every child deserved education.\n\nThe Church celebrates Saint Marguerite Bourgeoys on January 12. She became a saint because of her courage, her love for children, and her dedication to teaching. Her life shows children that helping others learn and grow is a beautiful way to serve God.",
+  bibleVerse: "Bible verse: Proverbs 22:6\nTrain up a child in the way he should go: and when he is old, he will not depart from it.",
+  meaning: "This verse teaches children that learning good values from a young age helps us grow into kind and faithful adults. God is happy when we learn and follow what is right.",
+  prayer: "Dear God, thank You for Saint Marguerite Bourgeoys, who loved teaching children. Please help me enjoy learning, be thankful for my teachers, and use what I learn to do good. Amen.",
+  action: "Listen carefully in class today and thank God for one thing you learned."
+},
+"01-13": {
+  title: "January 13  Saint Hilary of Poitiers",
+  story: "Saint Hilary was born in the city of Poitiers in France. His parents were not Christians at first, but they raised Hilary to love learning and to search for what is true. As he studied and thought deeply, Hilary came to know Jesus and chose to become a Christian. He later became a bishop because of his strong faith and love for God.\n\nDuring Hilary’s time, many people were confused about who Jesus really is. Saint Hilary bravely taught that Jesus is truly the Son of God. Because he spoke the truth, Hilary was treated badly and even sent far away from his home. Still, he did not become angry or give up. He continued to pray, write, and teach with patience and love.\n\nThe Church celebrates Saint Hilary on January 13. He became a saint because he loved the truth, taught about Jesus with courage, and remained faithful to God even when it was difficult.",
+  bibleVerse: "Bible verse: John 8:32\nAnd you shall know the truth, and the truth shall make you free.",
+  meaning: "This verse teaches children that knowing and loving what is true helps us live good and happy lives. When we choose truth and follow Jesus, our hearts become free.",
+  prayer: "Dear God, thank You for Saint Hilary, who loved the truth and taught others about Jesus. Please help me choose what is right, speak the truth kindly, and follow You every day. Amen.",
+  action: "Tell the truth today, even in a small thing, and ask God to help you choose what is right."
+},
 
 };
 
