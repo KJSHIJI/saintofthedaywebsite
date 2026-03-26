@@ -82,74 +82,77 @@ class SaintOfTheDay {
         return { title, story, bibleVerse, meaning, prayer, action, _raw: entry };
     }
 
-    // ---------- Init ----------
-    init() {
-        this.loadTheme();
-        this.checkOwnerLogin();
-        this.checkUserAccessStatus();
-        this.loadKDPPreferences();
+    // ---------- Init (SAFE VERSION) ----------
+init() {
+    this.loadTheme();
+    this.checkOwnerLogin();
+    this.checkUserAccessStatus();
+    this.loadKDPPreferences();
 
-        this.setupEventListeners();
-        this.updateUIBasedOnAccess();
+    this.setupEventListeners();
+    this.updateUIBasedOnAccess();
 
-        // Set date input to today (if it exists)
-        const dateInput = document.getElementById("date-input");
-        if (dateInput) dateInput.valueAsDate = this.currentDate;
+    // ✅ SAFELY set today's date without valueAsDate
+    const dateInput = document.getElementById("date-input");
+    this.currentDate = new Date();
 
-        this.updateDateDisplay();
-        this.displayDay(this.currentDate);
+    if (dateInput) {
+        // Use YYYY-MM-DD string (safe for <input type="date">)
+        dateInput.value = this.currentDate.toISOString().slice(0, 10);
     }
 
-    loadSavedEntries() {
-        // Load all entries from localStorage
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key && key.startsWith("DAILY_CONTENT_")) {
-                const dateKey = key.replace("DAILY_CONTENT_", "");
-                try {
-                    DAILY_CONTENT[dateKey] = JSON.parse(localStorage.getItem(key));
-                } catch (e) {
-                    console.error("Error loading entry:", dateKey, e);
-                }
+    this.updateDateDisplay();
+    this.displayDay(this.currentDate);
+}
+
+loadSavedEntries() {
+    // Load all entries from localStorage safely
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith("DAILY_CONTENT_")) {
+            const dateKey = key.replace("DAILY_CONTENT_", "");
+            try {
+                DAILY_CONTENT[dateKey] = JSON.parse(localStorage.getItem(key));
+            } catch (e) {
+                console.error("Error loading entry:", dateKey, e);
             }
         }
     }
+}
 
-    setupEventListeners() {
-        // Date input
-        this.safeOn("date-input", "change", (e) => {
-            this.currentDate = new Date(e.target.value + "T00:00:00");
-            this.displayDay(this.currentDate);
-            this.updateDateDisplay();
-        });
+setupEventListeners() {
+    // ✅ Date input (SAFE parsing)
+    this.safeOn("date-input", "change", (e) => {
+        const value = e.target.value; // YYYY-MM-DD
+        if (!value) return;
 
-        // Today
-        this.safeOn("today-btn", "click", () => {
-            this.currentDate = new Date();
-            this.displayDay(this.currentDate);
-            this.updateDateDisplay();
-        });
+        this.currentDate = new Date(value + "T00:00:00");
+        this.displayDay(this.currentDate);
+        this.updateDateDisplay();
+    });
 
-        // Random Day (FIXED)
-        this.safeOn("randomDayBtn", "click", () => {
-            // Ensure placeholders exist (if you use generatePlaceholders in daily-data.js)
-            if (typeof generatePlaceholders === "function") {
-                generatePlaceholders();
-            }
+    // ✅ Today button
+    this.safeOn("today-btn", "click", () => {
+        this.currentDate = new Date();
+        this.displayDay(this.currentDate);
+        this.updateDateDisplay();
+    });
 
-            const keys = Object.keys(DAILY_CONTENT || {});
-            if (!keys.length) {
-                console.error("DAILY_CONTENT is empty");
-                return;
-            }
+    // ✅ Random Day (SAFE & SIMPLE)
+    this.safeOn("randomDayBtn", "click", () => {
+        const keys = Object.keys(DAILY_CONTENT || {});
+        if (!keys.length) {
+            console.error("DAILY_CONTENT is empty");
+            return;
+        }
 
-            const randomKey = keys[Math.floor(Math.random() * keys.length)];
-            this.currentDate = this.parseDate(randomKey);
+        const randomKey = keys[Math.floor(Math.random() * keys.length)];
+        this.currentDate = this.parseDate(randomKey);
 
-            this.displayDay(this.currentDate);
-            this.updateDateDisplay();
-        });
-
+        this.displayDay(this.currentDate);
+        this.updateDateDisplay();
+    });
+}
         // Prev/Next
         this.safeOn("prev-btn", "click", () => {
             this.currentDate.setDate(this.currentDate.getDate() - 1);
