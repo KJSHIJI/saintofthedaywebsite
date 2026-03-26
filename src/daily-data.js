@@ -49,6 +49,30 @@ const DAILY_CONTENT = {
   prayer: "Dear Jesus, You are the Light of the world. Thank You for coming to save everyone. Help me follow You each day and offer You my love and good actions. Amen.",
   action: "Do one good deed today as a gift for Jesus, and thank Him for loving all people."
 },
+"01-07": {
+  title: "January 7  Saint Raymond of Peñafort",
+  story: "Saint Raymond of Peñafort was born in the town of Peñafort, in Spain. His parents were noble and faithful Catholics who taught him to love God and to value honesty and learning. Raymond was very intelligent, and as a young man he studied hard so he could help others understand what was right.\n\nRaymond became a priest and later helped the Church by explaining God’s laws clearly and kindly. Many people came to him when they were confused or troubled, and Raymond patiently helped them choose what was good and fair. Even though he was very learned, he lived simply and humbly. He cared deeply for people who were poor or treated unfairly and wanted everyone to follow God with a clear conscience.\n\nThe Church celebrates Saint Raymond on January 7. He became a saint because he used his wisdom to help others, spoke the truth with kindness, and showed that learning can be a way to serve God when it is guided by love.",
+  bibleVerse: "Bible verse: James 1:5\nBut if any of you want wisdom, let him ask of God, who giveth to all men abundantly, and upbraideth not: and it shall be given him.",
+  meaning: "This verse teaches children that God loves to help us learn what is right. When we ask God for wisdom, He is happy to guide us and help us make good choices.",
+  prayer: "Dear God, thank You for Saint Raymond, who used his learning to help others. Please help me ask You for wisdom, choose what is right, and be kind to everyone. Amen.",
+  action: "Before making a choice today, pause and ask God quietly to help you choose what is good and kind."
+},
+"01-08": {
+  title: "January 8  Saint Severin of Noricum",
+  story: "Saint Severin lived many years ago in a land called Noricum, which is part of Europe today. The Church does not record the names of his parents or the exact place where he was born, but it remembers clearly the kind of life he lived. Severin chose a simple life of prayer and trusted God completely.\n\nDuring a difficult time when people were poor, hungry, and afraid, Saint Severin traveled from place to place helping them. He shared food with the hungry, protected the weak, and encouraged people not to lose hope. He taught them to pray and reminded them that God had not forgotten them. Many people saw that Severin cared more about helping others than about himself.\n\nThe Church celebrates Saint Severin on January 8 because of his great love for the poor, his strong faith, and his kindness during hard times. He became a saint because he trusted God, helped people in need, and showed that love and prayer can bring light even in dark moments.",
+  bibleVerse: "Bible verse: Matthew 25:40\nAmen I say to you, as long as you did it to one of these my least brethren, you did it to me.",
+  meaning: "This verse teaches children that when we help others, we are also showing love to Jesus. Every kind action, even a small one, is important to God.",
+  prayer: "Dear God, thank You for Saint Severin, who helped the poor and trusted You in difficult times. Please help me notice people who need help and show them kindness and love. Amen.",
+  action: "Share something today—your food, your time, or your kindness—with someone who needs it."
+},
+"01-09": {
+  title: "January 9  Saint Adrian of Canterbury",
+  story: "Saint Adrian was born in North Africa and later traveled to Europe to serve the Church. The names of his parents are not recorded, but the Church remembers Adrian as a man who loved learning and prayer. He became a monk and spent his life studying God’s word so he could teach others.\n\nSaint Adrian was invited to England, where he helped lead a famous school in Canterbury. Children and adults came from many places to learn from him. Adrian taught them about the Bible, prayer, languages, and how to live good Christian lives. He was known for being patient, wise, and kind to everyone who wanted to learn.\n\nThe Church celebrates Saint Adrian on January 9. He became a saint because he used his knowledge to serve God, helped others grow in faith, and showed that teaching is a beautiful way to love and serve the Church.",
+  bibleVerse: "Bible verse: Proverbs 4:7\nWisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding.",
+  meaning: "This verse teaches children that learning good and true things is very important. God is happy when we try to understand what is right and grow wiser each day.",
+  prayer: "Dear God, thank You for Saint Adrian, who loved learning and helped others grow in faith. Please help me enjoy learning, listen carefully, and use what I learn to do good. Amen.",
+  action: "Pay close attention in school or catechism today and thank God for the gift of learning."
+},
 
 };
 
