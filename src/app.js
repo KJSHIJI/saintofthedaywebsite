@@ -13,12 +13,13 @@ const KDP_TRIM_SIZES = {
     "8.5x11": { width: 8.5, height: 11, margins: "0.75in" }
 };
 
-// Pricing configuration
+// Pricing configuration (UPDATED)
 const PRICING = {
-    day: { price: 5, duration: 1 * 24 * 60 * 60 * 1000, label: "1 Day" },
-    month: { price: 200, duration: 30 * 24 * 60 * 60 * 1000, label: "1 Month" },
-    year: { price: 999, duration: 365 * 24 * 60 * 60 * 1000, label: "1 Year" }
+    day:   { price: 5,   duration: 1 * 24 * 60 * 60 * 1000,   label: "1 Day (₹5)" },
+    month: { price: 100, duration: 30 * 24 * 60 * 60 * 1000,  label: "1 Month (₹100)" },
+    year:  { price: 500, duration: 365 * 24 * 60 * 60 * 1000, label: "Full Year / Full Book (₹500)" }
 };
+
 
 class SaintOfTheDay {
     constructor() {
