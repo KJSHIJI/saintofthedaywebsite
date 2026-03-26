@@ -241,6 +241,14 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Martina, who trusted You completely. Please help me love You, stay faithful, and be brave when it is hard to do what is right. Amen.",
   action: "When something feels difficult today, say a short prayer and remember that God is always with you."
 },
+"01-31": {
+  title: "January 31  Saint John Bosco",
+  story: "Saint John Bosco was born in Italy into a poor family. When he was very young, his father died, and his mother worked hard to raise him with faith, honesty, and kindness. From childhood, John loved God and cared deeply for other children, especially those who were poor or had no one to guide them.\n\nAs a priest, John Bosco spent his life helping children who lived on the streets or had no chance to learn. He welcomed them with joy, taught them about Jesus, helped them study, and showed them how to live good lives. John believed that children learn best when they are loved, encouraged, and treated with respect.\n\nThe Church celebrates Saint John Bosco on January 31. He became a saint because of his great love for children, his joyful spirit, and his trust in God. His life teaches children that kindness, joy, and helping others are beautiful ways to follow Jesus.",
+  bibleVerse: "Bible verse: Matthew 19:14\nSuffer the little children, and forbid them not to come to me: for the kingdom of heaven is for such.",
+  meaning: "This verse teaches children that Jesus loves them very much and wants them close to Him. God is happy when children learn, pray, and grow in love.",
+  prayer: "Dear Jesus, thank You for Saint John Bosco, who loved and cared for children. Please help me be joyful, kind, and loving to everyone, especially those who need help. Amen.",
+  action: "Show kindness today by helping a younger child or encouraging a friend with loving words."
+},
 };
 
 // Add placeholder entries for all days of the year
