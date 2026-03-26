@@ -73,6 +73,14 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Adrian, who loved learning and helped others grow in faith. Please help me enjoy learning, listen carefully, and use what I learn to do good. Amen.",
   action: "Pay close attention in school or catechism today and thank God for the gift of learning."
 },
+"01-10": {
+  title: "January 10  Saint Gregory of Nyssa",
+  story: "Saint Gregory of Nyssa was born in Cappadocia, a land that is part of present-day Turkey. He was born into a holy Christian family. His parents were named Basil the Elder and Emmelia, and they taught their children to love God deeply. Several members of Gregory’s family became saints, including his brother Saint Basil the Great and his sister Saint Macrina.\n\nGregory grew up learning about God at home and at school. As an adult, he became a bishop and helped the Church by teaching people about God’s love and goodness. Gregory explained difficult ideas in gentle ways so that people could understand them better. He reminded everyone that God is full of mercy and that we grow closer to God by loving others.\n\nThe Church celebrates Saint Gregory of Nyssa on January 10. He became a saint because he used his learning to teach about God with kindness, lived a faithful life, and showed that growing in goodness is a lifelong journey.",
+  bibleVerse: "Bible verse: Matthew 5:8\nBlessed are the clean of heart: for they shall see God.",
+  meaning: "This verse teaches children that when our hearts are loving and kind, we can feel close to God. Choosing good thoughts and actions helps us grow closer to Him.",
+  prayer: "Dear God, thank You for Saint Gregory of Nyssa and his holy family. Please help me keep my heart clean, be kind to others, and grow closer to You each day. Amen.",
+  action: "Try to keep your heart kind today by speaking gently and choosing one good thought or action."
+},
 
 };
 
