@@ -41,6 +41,14 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint John Neumann, who loved children and helped them learn about You. Please help me love learning, be kind to others, and serve You with a joyful heart. Amen.",
   action: "Say one prayer today for your teachers and try your best in one lesson or task as a gift to God."
 },
+"01-06": {
+  title: "January 6  The Epiphany of the Lord",
+  story: "On January 6, the Church celebrates the Epiphany of the Lord. This feast remembers the day when the Wise Men, also called the Magi, came from faraway lands to visit baby Jesus. The Magi were not kings, but learned men who studied the stars. When they saw a bright new star in the sky, they understood that a great King had been born.\n\nThe Wise Men traveled a long and difficult journey, guided only by the star. When they finally found Jesus in Bethlehem, they bowed down and worshipped Him. They offered Him three gifts: gold to honor Him as King, frankincense to honor Him as God, and myrrh to remind us that Jesus came to save the world through sacrifice.\n\nThe Epiphany teaches us that Jesus came not only for one people, but for everyone in the world. The Church celebrates this feast on January 6 to remind us that Jesus is the Light for all nations and that everyone is invited to know and love Him.",
+  bibleVerse: "Bible verse: Matthew 2:11\nAnd entering into the house, they found the child with Mary his mother, and falling down they adored him: and opening their treasures, they offered him gifts; gold, frankincense, and myrrh.",
+  meaning: "This verse teaches children that Jesus is worthy of love and worship. Like the Wise Men, we can offer Jesus our best gifts—our kindness, our prayers, and our love.",
+  prayer: "Dear Jesus, You are the Light of the world. Thank You for coming to save everyone. Help me follow You each day and offer You my love and good actions. Amen.",
+  action: "Do one good deed today as a gift for Jesus, and thank Him for loving all people."
+},
 
 };
 
