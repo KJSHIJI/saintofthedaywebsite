@@ -24,17 +24,27 @@
         </div>
 
         <header>
-            <h1>Saint of the Day</h1>
-            <p class="author">By SHIJI KJ</p>
-            
-            <div class="controls">
-                <label for="date-input">Select Date:</label>
-                <input type="date" id="date-input" />
-                <button id="today-btn">Today</button>
-                <button id="random-btn">Random Day</button>
-                <span id="date-display" class="date-display"></span>
-            </div>
-        </header>
+    <h1>Saint of the Day</h1>
+    <p class="author">By SHIJI KJ</p>
+
+    <div class="controls">
+        <label for="date-input">Select Date:</label>
+
+        <!-- ✅ Date picker: readonly to avoid typing issues -->
+        <input
+            type="date"
+            id="date-input"
+            readonly
+        />
+
+        <!-- ✅ Buttons -->
+        <button id="today-btn">Today</button>
+        <button id="randomDayBtn">Random Day</button>
+
+        <!-- ✅ Human‑readable date -->
+        <span id="date-display" class="date-display"></span>
+    </div>
+</header>
 
         <nav class="pagination">
             <button id="prev-btn" class="nav-btn">← Previous</button>
