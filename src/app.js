@@ -115,34 +115,48 @@ class SaintOfTheDay {
     }
 
     setupEventListeners() {
-       // ✅ Date input (LOCAL TIME SAFE – NO TIMEZONE SHIFT)
-this.safeOn("date-input", "change", (e) => {
-    if (!e.target.value) return;
 
-    // e.target.value is YYYY-MM-DD
-    const [year, month, day] = e.target.value.split("-").map(Number);
+    /* ======================================================
+       DATE PICKER — CALENDAR ONLY, LOCAL TIME SAFE
+       ====================================================== */
 
-    // ✅ Create date in LOCAL time
-    this.currentDate = new Date(year, month - 1, day);
+    // ✅ Prevent manual typing (calendar only)
+    this.safeOn("date-input", "keydown", (e) => {
+        e.preventDefault();
+    });
 
-    this.displayDay(this.currentDate);
-    this.updateDateDisplay();
-});
+    // ✅ Handle date selection from calendar
+    this.safeOn("date-input", "change", (e) => {
+        if (!e.target.value) return;
 
-// ✅ Today button (SAFE)
-this.safeOn("today-btn", "click", () => {
-    const now = new Date();
+        // value is YYYY-MM-DD
+        const [year, month, day] = e.target.value.split("-").map(Number);
 
-    // ✅ Strip time, keep local date only
-    this.currentDate = new Date(
-        now.getFullYear(),
-        now.getMonth(),
-        now.getDate()
-    );
+        // ✅ Create LOCAL date (no timezone shift)
+        this.currentDate = new Date(year, month - 1, day);
 
-    this.displayDay(this.currentDate);
-    this.updateDateDisplay();
-});
+        this.displayDay(this.currentDate);
+        this.updateDateDisplay();
+    });
+
+    /* ======================================================
+       TODAY BUTTON — LOCAL DATE ONLY
+       ====================================================== */
+
+    this.safeOn("today-btn", "click", () => {
+        const now = new Date();
+
+        // ✅ Strip time; keep local date only
+        this.currentDate = new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate()
+        );
+
+        this.displayDay(this.currentDate);
+        this.updateDateDisplay();
+    });
+
 
         // Prev/Next
         this.safeOn("prev-btn", "click", () => {
