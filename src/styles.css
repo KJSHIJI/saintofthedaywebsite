@@ -253,7 +253,6 @@ html.dark-mode .daily-page h2 {
 html.dark-mode .daily-page p {
     color: #e8eaed;
 }
-
 .scripture-ref {
     font-weight: 600;
     color: var(--accent-color);
@@ -274,6 +273,13 @@ html.dark-mode .scripture-ref {
     color: var(--text-color);
     text-align: justify;
     border-radius: 4px;
+
+    /* ✅ FIX FOR TEXT GOING OUTSIDE THE BOX */
+    white-space: pre-wrap;      /* allows wrapping inside <pre> */
+    word-wrap: break-word;      /* breaks long words */
+    overflow-wrap: break-word;  /* modern browser support */
+    box-sizing: border-box;     /* respects padding */
+    max-width: 100%;
 }
 
 html.dark-mode .scripture-text {
@@ -281,7 +287,6 @@ html.dark-mode .scripture-text {
     color: #e8eaed;
     border-left-color: #64b5f6;
 }
-
 .meaning {
     background-color: #f9f9f9;
     padding: 0.75rem 1.5rem;
