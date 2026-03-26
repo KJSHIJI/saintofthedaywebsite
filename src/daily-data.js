@@ -105,7 +105,22 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Hilary, who loved the truth and taught others about Jesus. Please help me choose what is right, speak the truth kindly, and follow You every day. Amen.",
   action: "Tell the truth today, even in a small thing, and ask God to help you choose what is right."
 },
-
+"01-14": {
+  title: "January 14  Saint Devasahayam Pillai",
+  story: "Saint Devasahayam Pillai was born in the village of Nattalam, in present-day Tamil Nadu, India. He was born into a Hindu family, and his parents named him Neelakanda Pillai. As a young man, he worked in the royal court and lived a comfortable life.\n\nWhile serving the king, Neelakanda met a Christian officer who spoke to him about Jesus. Neelakanda listened carefully and felt his heart change. He learned about the love of Jesus and chose to become a Christian. At his baptism, he received the name Devasahayam, which means “God helps.”\n\nAfter becoming Christian, Devasahayam treated everyone equally and spoke kindly about Jesus. This made some people angry. He was punished, treated badly, and finally killed because he refused to give up his faith. Devasahayam accepted his suffering with patience and forgave those who hurt him. The Church celebrates Saint Devasahayam Pillai on January 14 because he courageously chose Jesus and remained faithful until the end.",
+  bibleVerse: "Bible verse: Matthew 5:10\nBlessed are they that suffer persecution for justice’ sake: for theirs is the kingdom of heaven.",
+  meaning: "This verse teaches children that God is close to people who choose what is right, even when it is hard. Jesus promises great joy to those who stay faithful to Him.",
+  prayer: "Dear Jesus, thank You for Saint Devasahayam Pillai, who loved You more than anything else. Please help me be brave in my faith, choose kindness, and trust You every day. Amen.",
+  action: "Stand up for what is right today, even in a small way, and say a prayer for people who are treated unfairly."
+},
+"01-15": {
+  title: "January 15  Saint Paul the Hermit",
+  story: "Saint Paul the Hermit was born in Egypt many centuries ago. His parents were wealthy Christians who taught him to love God, but they died when Paul was still young. During a time when Christians were treated badly, Paul chose to leave his home and live alone in the desert so he could pray and trust God completely.\n\nPaul lived a very simple life in the desert. He prayed every day, trusted God for food and shelter, and learned to be happy with very little. Tradition tells us that God took care of Paul in wonderful ways and that he lived many years in peace and prayer. Near the end of his life, another holy man named Saint Anthony visited him and learned from Paul’s deep love for God.\n\nThe Church celebrates Saint Paul the Hermit on January 15. He became a saint because he trusted God completely, lived a life of prayer, and showed that being close to God is more important than riches or comfort.",
+  bibleVerse: "Bible verse: Matthew 6:33\nBut seek ye first the kingdom of God, and his justice, and all these things shall be added unto you.",
+  meaning: "This verse teaches children that God should come first in our lives. When we trust God and choose Him above everything else, He takes care of us.",
+  prayer: "Dear God, thank You for Saint Paul the Hermit, who trusted You with his whole life. Please help me remember You each day, pray with love, and trust You to take care of me. Amen.",
+  action: "Spend a quiet minute today talking to God in prayer and thank Him for caring for you."
+}
 };
 
 // Add placeholder entries for all days of the year
