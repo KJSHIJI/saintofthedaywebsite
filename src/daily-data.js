@@ -280,7 +280,10 @@ function generatePlaceholders() {
         ...Array.from({ length: 31 }, (_, i) => `12-${String(i + 1).padStart(2, '0')}`)
     ];
 
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
 
     days.forEach(key => {
         if (!DAILY_CONTENT[key]) {
@@ -288,15 +291,12 @@ function generatePlaceholders() {
             const monthName = monthNames[parseInt(month, 10) - 1];
 
             DAILY_CONTENT[key] = {
-                date: `${monthName} ${parseInt(day, 10)}`,
-                saint: "(Content needed — add verified facts here)",
-                prayer: "(Content needed — add verified facts here)",
-                scripture: "(Content needed — add verified facts here)",
-                scriptureText: "(Content needed — add verified facts here)",
-                meaning: "(Content needed — add verified facts here)",
-                story: "(Content needed — add verified facts here)",
-                thought: "(Content needed — add verified facts here)",
-                action: "(Content needed — add verified facts here)"
+                title: `${monthName} ${parseInt(day, 10)}  (Saint / Feast to be added)`,
+                story: "(Story content needed — add verified Catholic facts here)",
+                bibleVerse: "(Bible verse reference and text — Douay-Rheims)",
+                meaning: "(Simple child-friendly meaning of the Bible verse)",
+                prayer: "(Short prayer written for children)",
+                action: "(One simple action a child can do today)"
             };
         }
     });
