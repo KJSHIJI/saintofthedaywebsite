@@ -197,7 +197,7 @@ class SaintOfTheDay {
         return `${month}-${day}`;
     }
 
-    displayDay(date) {
+        displayDay(date) {
     const key = this.getDateKey(date);
     const content = DAILY_CONTENT[key];
     const container = document.getElementById("daily-content");
@@ -221,26 +221,27 @@ class SaintOfTheDay {
 
     // ✅ FULL CONTENT (OWNER OR FREE DAY)
     const html = `
-        <div class="daily-date">${content.date} — ${content.saint}</div>
-
-        <h2>Prayer</h2>
-        <p class="content" style="text-align:justify;">${this.escapeHtml(content.prayer)}</p>
-
-        <h2>Scripture</h2>
-        <p class="scripture-ref">📖 ${this.escapeHtml(content.scripture)}</p>
-        <div class="scripture-text">${this.escapeHtml(content.scriptureText)}</div>
-
-        <h2>Meaning</h2>
-        <div class="meaning">${this.escapeHtml(content.meaning)}</div>
+        <div class="daily-date">${this.escapeHtml(content.title)}</div>
 
         <h2>Story</h2>
-        <p class="story content">${this.escapeHtml(content.story)}</p>
+        <p class="content" style="text-align:justify;">
+            ${this.escapeHtml(content.story)}
+        </p>
 
-        <h2>Today's Thought</h2>
-        <p class="content">${this.escapeHtml(content.thought)}</p>
+        <h2>Bible Verse</h2>
+        <pre class="scripture-text">
+${this.escapeHtml(content.bibleVerse)}
+        </pre>
 
-        <h2>Today's Action</h2>
-        <p class="content">${this.escapeHtml(content.action)}</p>
+        <h2>Prayer</h2>
+        <p class="content">
+            ${this.escapeHtml(content.prayer)}
+        </p>
+
+        <h2>Task of the Day</h2>
+        <p class="content">
+            ${this.escapeHtml(content.action)}
+        </p>
     `;
 
     container.innerHTML = html;
