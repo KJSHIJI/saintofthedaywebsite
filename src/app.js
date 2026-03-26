@@ -552,94 +552,85 @@ Scripture quotations are from the Douay-Rheims Bible (Public Domain).</p>
     }
 
     // ---------- Editor ----------
-    openEditor() {
-        if (!this.isOwnerLoggedIn) {
-            alert("❌ Only the owner can edit content. Please login first.");
-            this.openLoginModal();
-            return;
-        }
+    // ---------- Editor (UPDATED TO CURRENT BOOK FORMAT) ----------
 
-        const key = this.getDateKey(this.currentDate);
-        const raw = DAILY_CONTENT[key];
-        const content = this.normalizeEntry(raw, key);
-
-        // Fill existing editor fields (keep your current HTML IDs)
-        const saintField = document.getElementById("editor-saint");
-        const prayerField = document.getElementById("editor-prayer");
-        const scriptureRefField = document.getElementById("editor-scripture");
-        const scriptureTextField = document.getElementById("editor-scripture-text");
-        const meaningField = document.getElementById("editor-meaning");
-        const storyField = document.getElementById("editor-story");
-        const actionField = document.getElementById("editor-action");
-
-        const dateField = document.getElementById("editor-date");
-        if (dateField) dateField.value = key;
-
-        // Extract saint from title if possible (e.g., "January 1  Mary, Mother of God")
-        let saintName = "";
-        if (content && content.title) {
-            const parts = content.title.split("  ");
-            saintName = parts.length >= 2 ? parts.slice(1).join("  ").trim() : "";
-        }
-        if (saintField) saintField.value = saintName || "";
-
-        if (storyField) storyField.value = (content && content.story) || "";
-        if (meaningField) meaningField.value = (content && content.meaning) || "";
-        if (prayerField) prayerField.value = (content && content.prayer) || "";
-        if (actionField) actionField.value = (content && content.action) || "";
-
-        // Parse bibleVerse into ref + text if possible
-        let ref = "";
-        let verseText = "";
-        if (content && content.bibleVerse) {
-            const lines = String(content.bibleVerse).split("\n");
-            if (lines[0]) ref = lines[0].replace(/^Bible verse:\s*/i, "").trim();
-            verseText = lines.slice(1).join("\n").trim();
-        }
-        if (scriptureRefField) scriptureRefField.value = ref;
-        if (scriptureTextField) scriptureTextField.value = verseText;
-
-        const modal = document.getElementById("editor-modal");
-        if (modal) modal.style.display = "block";
+openEditor() {
+    if (!this.isOwnerLoggedIn) {
+        alert("❌ Only the owner can edit content. Please login first.");
+        this.openLoginModal();
+        return;
     }
 
-    closeEditor() {
-        const modal = document.getElementById("editor-modal");
-        if (modal) modal.style.display = "none";
+    const key = this.getDateKey(this.currentDate);
+    const content = DAILY_CONTENT[key] || {};
+
+    // Populate editor fields (NEW FORMAT ONLY)
+    const dateField = document.getElementById("editor-date");
+    const titleField = document.getElementById("editor-title");
+    const storyField = document.getElementById("editor-story");
+    const bibleVerseField = document.getElementById("editor-bibleVerse");
+    const meaningField = document.getElementById("editor-meaning");
+    const prayerField = document.getElementById("editor-prayer");
+    const actionField = document.getElementById("editor-action");
+
+    if (dateField) dateField.value = key;
+    if (titleField) titleField.value = content.title || "";
+    if (storyField) storyField.value = content.story || "";
+    if (bibleVerseField) bibleVerseField.value = content.bibleVerse || "";
+    if (meaningField) meaningField.value = content.meaning || "";
+    if (prayerField) prayerField.value = content.prayer || "";
+    if (actionField) actionField.value = content.action || "";
+
+    const modal = document.getElementById("editor-modal");
+    if (modal) modal.style.display = "block";
+}
+
+closeEditor() {
+    const modal = document.getElementById("editor-modal");
+    if (modal) modal.style.display = "none";
+}
+
+saveEntry() {
+    const key = document.getElementById("editor-date")?.value.trim() || "";
+
+    if (!/^\d{2}-\d{2}$/.test(key)) {
+        alert("Please enter date in MM-DD format (e.g., 01-15)");
+        return;
     }
 
-    saveEntry() {
-        const key = document.getElementById("editor-date")?.value || "";
+    const title = document.getElementById("editor-title")?.value.trim();
+    const story = document.getElementById("editor-story")?.value.trim();
+    const bibleVerse = document.getElementById("editor-bibleVerse")?.value.trim();
+    const meaning = document.getElementById("editor-meaning")?.value.trim();
+    const prayer = document.getElementById("editor-prayer")?.value.trim();
+    const action = document.getElementById("editor-action")?.value.trim();
 
-        if (!/^\d{2}-\d{2}$/.test(key)) {
-            alert("Please enter date in MM-DD format (e.g., 01-15)");
-            return;
-        }
-
-        const saintName = document.getElementById("editor-saint")?.value || "(Saint/Feast needed)";
-        const prayer = document.getElementById("editor-prayer")?.value || "(Prayer needed)";
-        const scriptureRef = document.getElementById("editor-scripture")?.value || "(Reference needed)";
-        const scriptureText = document.getElementById("editor-scripture-text")?.value || "(Verse text needed)";
-        const meaning = document.getElementById("editor-meaning")?.value || "(Meaning needed)";
-        const story = document.getElementById("editor-story")?.value || "(Story needed)";
-        const action = document.getElementById("editor-action")?.value || "(Task needed)";
-
-        const title = `${this.getMonthDayFull(key)}  ${saintName}`.trim();
-        const bibleVerse = `Bible verse: ${scriptureRef}\n${scriptureText}`.trim();
-
-        const entry = { title, story, bibleVerse, meaning, prayer, action };
-
-        DAILY_CONTENT[key] = entry;
-        localStorage.setItem("DAILY_CONTENT_" + key, JSON.stringify(entry));
-
-        alert("✅ Entry saved successfully!");
-        this.closeEditor();
-
-        this.currentDate = this.parseDate(key);
-        this.displayDay(this.currentDate);
-        this.updateDateDisplay();
+    // Basic validation (prevents empty broken entries)
+    if (!title || !story || !bibleVerse) {
+        alert("❌ Please fill at least Title, Story, and Bible Verse.");
+        return;
     }
 
+    const entry = {
+        title,
+        story,
+        bibleVerse,
+        meaning: meaning || "(Meaning needed)",
+        prayer: prayer || "(Prayer needed)",
+        action: action || "(Task needed)"
+    };
+
+    // Save entry
+    DAILY_CONTENT[key] = entry;
+    localStorage.setItem("DAILY_CONTENT_" + key, JSON.stringify(entry));
+
+    alert("✅ Entry saved successfully!");
+    this.closeEditor();
+
+    this.currentDate = this.parseDate(key);
+    this.displayDay(this.currentDate);
+    this.updateDateDisplay();
+}
     // ---------- Date formatting ----------
     getMonthDay(dateKey) {
         const [month, day] = dateKey.split("-");
