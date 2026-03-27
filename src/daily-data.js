@@ -257,6 +257,38 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Brigid, who lived with a generous and loving heart. Help me to care for others and to share what I have with kindness. Amen.",
   action: "Do one kind act today, such as sharing food, helping at home, or being kind to someone who feels left out."
 },
+"02-02": {
+  title: "February 2  The Presentation of the Lord",
+  story: "When Jesus was still a baby, Mary and Joseph took Him to the temple in Jerusalem to offer Him to God. This was done to thank God and to follow God’s law with love and obedience.\n\nAt the temple, an old and holy man named Simeon saw Baby Jesus and was filled with joy. He thanked God because he knew that Jesus was the Savior sent to bring light to the whole world. A woman named Anna was also there, and she praised God when she saw Jesus.\n\nThe Church celebrates the Presentation of the Lord on February 2. This feast reminds us that Jesus is the Light of the World and that offering ourselves to God with love makes Him happy.",
+  bibleVerse: "Luke 2:32\nA light to the revelation of the Gentiles, and the glory of thy people Israel.",
+  meaning: "This verse teaches children that Jesus brings God’s light to everyone. When we follow Jesus, He helps us choose what is good and right.",
+  prayer: "Dear Jesus, thank You for being the Light of the World. Please help me follow Your light and offer my life to God with love and joy. Amen.",
+  action: "Light a candle today or say a prayer, thanking Jesus for guiding you with His light."
+},
+"02-03": {
+  title: "February 3  Saint Blaise",
+  story: "Saint Blaise was a bishop who lived many years ago and loved God very much. He cared deeply for the people he served and was known for his kindness and prayerful life. Saint Blaise helped others not only by teaching them about God, but also by caring for their needs.\n\nAccording to Church tradition, Saint Blaise prayed for a child who was suffering from a throat problem, and the child was healed. Because of this, Saint Blaise is remembered as a protector of those who are sick, especially people with throat illnesses.\n\nThe Church celebrates Saint Blaise on February 3. On this day, many people receive a special blessing for their throats, asking God to keep them healthy and safe.",
+  bibleVerse: "Jeremias 30:17\nFor I will restore health to thee, and I will heal thee of thy wounds, saith the Lord.",
+  meaning: "This verse means that God Himself promises to heal and care for His people. It teaches children that God sees our pain, loves us deeply, and has the power to make us well again.",
+  prayer: "Dear God, thank You for Saint Blaise, who trusted in Your healing power. Please protect my health and help me trust You when I am unwell or afraid. Amen.",
+  action: "Say a prayer today for someone who is sick and ask God to give them healing and strength."
+},
+"02-04": {
+  title: "February 4  Saint John de Britto",
+  story: "Saint John de Britto was born in Lisbon, Portugal, into a noble Catholic family. As a young man, he chose to become a Jesuit priest and later travelled to India as a missionary. He spent many years in Tamil Nadu, where he lived simply, learned the local language, and shared the love of Christ with great respect for the people and their culture.\n\nSaint John de Britto is especially remembered for his courage and faith. He continued his mission even when it brought great danger to him. Because he refused to deny his faith in Jesus, he was killed for his belief, giving his life as a martyr.\n\nThe Church celebrates Saint John de Britto on February 4. He is remembered as a missionary who gave his life for Christ and as a witness to faith, courage, and love for the people he served.",
+  bibleVerse: "John 12:25\nHe that loveth his life shall lose it; and he that hateth his life in this world keepeth it unto life eternal.",
+  meaning: "Jesus speaks about choosing eternal life over earthly comfort. Those who are willing to give their lives to God and follow Him faithfully receive life that never ends.",
+  prayer: "Dear God, thank You for Saint John de Britto, who gave his life in faithful service to You. Help me to love You deeply and to remain faithful in all circumstances. Amen.",
+  action: "Spend a moment today thanking God for missionaries and praying for people who share the faith with courage."
+},
+"02-05": {
+  title: "February 5  Saint Agatha",
+  story: "Saint Agatha was born in Sicily, Italy, and grew up in a Christian family. From a young age, she chose to dedicate her life to God and to remain faithful to Jesus. She was known for her purity, courage, and deep trust in God.\n\nDuring a time of persecution, Saint Agatha refused to give up her faith. Because she would not deny Christ, she suffered and died as a martyr. Through her suffering, she remained peaceful and strong, trusting completely in God’s love and protection.\n\nThe Church celebrates Saint Agatha on February 5. She is remembered especially for her courage, faithfulness, and unwavering love for God, even in the face of great trials.",
+  bibleVerse: "2 Timothy 1:7\nFor God hath not given us the spirit of fear; but of power, and of love, and of sobriety.",
+  meaning: "God gives strength, love, and courage to those who trust in Him, helping them remain faithful even when they face fear or difficulty.",
+  prayer: "Dear God, thank You for Saint Agatha, who trusted You with a brave and faithful heart. Give me strength and courage to remain faithful to You in all situations. Amen.",
+  action: "When you feel afraid today, pause for a moment and quietly ask God for courage and peace."
+},
 };
 
 // Add placeholder entries for all days of the year
