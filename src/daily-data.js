@@ -289,6 +289,31 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Agatha, who trusted You with a brave and faithful heart. Give me strength and courage to remain faithful to You in all situations. Amen.",
   action: "When you feel afraid today, pause for a moment and quietly ask God for courage and peace."
 },
+"02-06": {
+  title: "February 6  Saint Paul Miki and Companions",
+  story: "Saint Paul Miki was born in Kyoto, Japan, and grew up in a Christian family. He became a Jesuit priest and was known for his clear preaching and deep love for Jesus. Along with twenty‑five other Catholic believers, including priests and laypeople, he shared the Gospel during a time when Christianity was forbidden in Japan.\n\nA well‑known incident from Saint Paul Miki’s life happened at the moment of his death. While being killed for his faith in Nagasaki, he spoke calmly to the people around him, declaring his trust in Jesus and forgiving those who were responsible for his suffering. His words showed peace, courage, and complete faith in God.\n\nThe Church celebrates Saint Paul Miki and his companions on February 6. They are remembered for their courage, forgiveness, and faithful witness to Christ, even when faced with death.",
+  bibleVerse: "Matthew 5:10\nBlessed are they that suffer persecution for justice’ sake: for theirs is the kingdom of heaven.",
+  meaning: "Jesus promises the kingdom of heaven to those who remain faithful and just, even when they suffer because of their faith.",
+  prayer: "Dear God, thank You for Saint Paul Miki and his companions, who remained faithful and forgiving until the end. Help me to trust You and remain faithful in all circumstances. Amen.",
+  action: "Say a prayer today for the grace to forgive others and to remain faithful to God in difficult moments."
+},
+"02-07": {
+  title: "February 7  Saint Theodore of Heraclea",
+  story: "Saint Theodore lived in the early centuries of the Church and served as a bishop in the city of Heraclea. From the beginning of his ministry, he remained faithful to Jesus and encouraged the Christian community to stay strong during times of persecution.\n\nDuring a period when Christians were being pressured to abandon their faith, Saint Theodore openly professed his belief in Christ. Because he refused to worship false gods, he was arrested and later put to death for his faith. Throughout his suffering, he remained calm and steadfast, trusting completely in God.\n\nThe Church honors Saint Theodore of Heraclea on February 7. He is remembered as a courageous bishop and martyr who remained faithful to Christ until the end of his life.",
+  bibleVerse: "Romans 8:18\nFor I reckon that the sufferings of this present time are not worthy to be compared with the glory to come, that shall be revealed in us.",
+  meaning: "The hardships faced in this life are temporary, while the glory God promises to those who remain faithful is everlasting.",
+  prayer: "Dear God, thank You for Saint Theodore of Heraclea, who remained faithful even in suffering. Strengthen my faith and help me trust in the glory You have promised. Amen.",
+  action: "When you face a difficulty today, pause for a moment and place your trust in God through a short prayer."
+},
+"02-08": {
+  title: "February 8  Saint Josephine Bakhita",
+  story: "Saint Josephine Bakhita was born in Sudan, Africa. As a young girl, she was taken far away from her home and family. For many years, she lived as a servant and suffered greatly. During this time, she often looked at the sun, moon, and stars and wondered who had created them, believing that a loving God must exist.\n\nLater, Josephine was taken to Italy, where she met kind religious sisters who treated her with care and respect. For the first time, she learned about Jesus and felt deep peace in her heart. When she was told that she could return to her former life, she chose to stay and belong to God instead, saying that she had found true freedom.\n\nThe Church celebrates Saint Josephine Bakhita on February 8. She is remembered for her forgiveness, her gentle smile, and her strong trust in God, even after a life filled with suffering.",
+  bibleVerse: "Romans 8:1\nThere is now therefore no condemnation to them that are in Christ Jesus.",
+  meaning: "Life in Christ brings freedom and peace, replacing fear and pain with dignity and hope.",
+  prayer: "Dear God, thank You for Saint Josephine Bakhita, who trusted You and found freedom in Your love. Help me to trust You and to treat others with kindness and respect. Amen.",
+  action: "Be kind today to someone who feels left out, and offer a smile or a helping hand."
+},
+
 };
 
 // Add placeholder entries for all days of the year
