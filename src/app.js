@@ -1,6 +1,6 @@
 /* Saint of the Day - Main Application */
 
-const OWNER_PASSWORD = "CHANGE_ME"; // Simple password - change this!
+const OWNER_PASSWORD = "Saint@2026"; // Simple password - change this!
 const UPI_ID = "yourname@bank"; // Update this with your UPI ID
 const FREE_DATES = ["01-01", "12-25"]; // Free preview dates: Jan 1 & Dec 25
 const PAID_ACCESS_DURATION = 365 * 24 * 60 * 60 * 1000; // 1 year in milliseconds
