@@ -313,7 +313,46 @@ const DAILY_CONTENT = {
   prayer: "Dear God, thank You for Saint Josephine Bakhita, who trusted You and found freedom in Your love. Help me to trust You and to treat others with kindness and respect. Amen.",
   action: "Be kind today to someone who feels left out, and offer a smile or a helping hand."
 },
-
+"02-09": {
+  title: "February 9  Saint Apollonia",
+  story: "Saint Apollonia lived in the city of Alexandria in Egypt during the early years of the Church. She was a devoted Catholic who loved Jesus and served the Christian community with faith and courage.\n\nDuring a time of persecution, a violent crowd tried to force Saint Apollonia to deny her faith. Even when threatened, she remained calm and refused to turn away from Christ. Trusting completely in God, she chose to remain faithful rather than save herself by denying Jesus.\n\nThe Church celebrates Saint Apollonia on February 9. She is remembered for her courage, steadfast faith, and trust in God during a moment of great trial.",
+  bibleVerse: "Matthew 10:28\nAnd fear ye not them that kill the body, and are not able to kill the soul: but rather fear him that can destroy both soul and body in hell.",
+  meaning: "Jesus reminds us that faithfulness to God is more important than fear, because the soul is precious and belongs to Him.",
+  prayer: "Dear God, thank You for Saint Apollonia, who trusted You with a brave and faithful heart. Help me to trust You and remain faithful even when it is difficult. Amen.",
+  action: "When you feel afraid today, take a quiet moment and ask God for courage and trust."
+},
+"02-10": {
+  title: "February 10  Saint Scholastica",
+  story: "Saint Scholastica was born in Italy and was the twin sister of Saint Benedict. From a young age, she dedicated her life completely to God through prayer and service. She lived near her brother’s monastery, choosing a quiet life centered on love for God.\n\nOnce a year, Saint Scholastica and Saint Benedict would meet to spend time talking about God and heavenly things. On one such day, Saint Scholastica wished to continue their holy conversation longer, but her brother wanted to leave. She prayed silently, and suddenly a powerful storm arose, making it impossible for him to go. Saint Benedict understood that God had answered her prayer, showing the strength of her love.\n\nThe Church celebrates Saint Scholastica on February 10. She is remembered especially for her deep prayer, loving heart, and the power of trusting God completely.",
+  bibleVerse: "1 John 4:16\nGod is charity: and he that abideth in charity, abideth in God, and God in him.",
+  meaning: "Living with love and trust in God brings closeness to Him, because God Himself is love.",
+  prayer: "Dear God, thank You for Saint Scholastica, who loved You with her whole heart. Help me to grow in love for You and for others each day. Amen.",
+  action: "Spend a few quiet minutes today talking to God in your heart about something you love or worry about."
+},
+"02-11": {
+  title: "February 11  Our Lady of Lourdes",
+  story: "On February 11, the Church honors Our Lady of Lourdes. This day remembers a special event that happened in Lourdes, France. A young girl named Saint Bernadette saw the Blessed Virgin Mary while she was praying quietly near a rocky place.\n\nMary asked Bernadette to pray and to trust God. During one of these visits, Mary guided her to uncover a small spring of water from the ground. This water soon became known for bringing healing and comfort to many people who came with faith and prayer.\n\nOur Lady of Lourdes is remembered as a loving mother who leads people closer to God through prayer, humility, and trust. This day is also a reminder of God’s care for the sick and those who suffer.",
+  bibleVerse: "Luke 1:46\nMy soul doth magnify the Lord.",
+  meaning: "Mary’s words express joy and gratitude to God, showing how a humble heart rejoices in God’s greatness and love.",
+  prayer: "Dear God, thank You for the loving care shown through Our Lady of Lourdes. Help me to trust You, pray with a humble heart, and remember Your love each day. Amen.",
+  action: "Say a simple prayer today for someone who is sick, asking God to give them comfort and peace."
+},
+"02-12": {
+  title: "February 12  Saint Eulalia of Barcelona",
+  story: "Saint Eulalia lived in Barcelona, Spain, and was born into a Christian family during a time when following Jesus was dangerous. Even though she was very young, she loved God deeply and was not afraid to speak about her faith.\n\nWhen people in authority tried to make her deny Jesus, Saint Eulalia refused. She remained calm and brave, trusting God completely. Because of her faith, she suffered and died as a martyr, choosing loyalty to Christ over fear.\n\nThe Church celebrates Saint Eulalia on February 12. She is remembered for her courage, honesty, and strong faith, showing that even a young person can love God with great strength.",
+  bibleVerse: "Matthew 10:32\nEvery one therefore that shall confess me before men, I will also confess him before my Father who is in heaven.",
+  meaning: "Jesus promises to stand with those who openly and faithfully belong to Him.",
+  prayer: "Dear God, thank You for Saint Eulalia, who loved You with a brave and faithful heart. Help me to stay true to You and to live my faith with courage. Amen.",
+  action: "Do one small thing today that shows your love for God, such as making the Sign of the Cross or saying a short prayer with confidence."
+},
+"02-13": {
+  title: "February 13  Saint Catherine de Ricci",
+  story: "Saint Catherine de Ricci was born in Florence, Italy, into a noble Catholic family. From a young age, she loved prayer and chose to give her life completely to God. She entered a convent while still very young and lived a life of obedience, humility, and service.\n\nSaint Catherine became well known for her deep prayer and love for Jesus, especially during the times when she remembered His suffering. Even though she experienced physical weakness and illness, she cared for the sick sisters in her convent and encouraged everyone with her kindness and patience.\n\nThe Church celebrates Saint Catherine de Ricci on February 13. She is remembered for her deep love for Christ, her compassion for others, and her faithful life of prayer and service.",
+  bibleVerse: "Colossians 3:12\nPut ye on therefore, as the elect of God, holy and beloved, the bowels of mercy, benignity, humility, modesty, patience.",
+  meaning: "Followers of Christ are called to live with mercy, kindness, humility, and patience in their daily lives.",
+  prayer: "Dear God, thank You for Saint Catherine de Ricci, who lived with love and patience. Help me to grow in kindness, humility, and care for others each day. Amen.",
+  action: "Show patience today by helping someone quietly, especially if they are slow or struggling."
+}
 };
 
 // Add placeholder entries for all days of the year
